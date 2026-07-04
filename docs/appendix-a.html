@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appendix A — The Measured Boundary</title>
+<meta name="description" content="Definitions, controls, crossover tables with confidence intervals, the fixed-k caveat, and the exact file behind every number in the essay.">
+<meta property="og:title" content="Appendix A — The Measured Boundary">
+<meta property="og:description" content="Definitions, controls, crossover tables with confidence intervals, the fixed-k caveat, and the exact file behind every number in the essay.">
+<meta property="og:type" content="article">
+<style>
+:root{--bg:#fbfaf6;--ink:#1d1c1a;--muted:#6b6760;--line:#e4e0d6;--accent:#7a5b2e;--rule:#ece8de;--tablehead:#f3f0e8;--quote-bg:#f1ead9}
+:root[data-theme=dark]{--bg:#15171c;--ink:#dfdcd4;--muted:#9a958c;--line:#2a2d34;--accent:#cdb079;--rule:#23262d;--tablehead:#1c1f25;--quote-bg:#1e222a}
+@media (prefers-color-scheme:dark){:root:not([data-theme]){--bg:#15171c;--ink:#dfdcd4;--muted:#9a958c;--line:#2a2d34;--accent:#cdb079;--rule:#23262d;--tablehead:#1c1f25;--quote-bg:#1e222a}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:20px/1.7 Iowan Old Style,Palatino,Georgia,"Times New Roman",serif;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;
+  gap:16px;padding:12px clamp(16px,5vw,40px);background:var(--bg);border-bottom:1px solid var(--line);
+  font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:15px}
+.nav .brand{font-weight:700;letter-spacing:.02em;color:var(--ink);text-decoration:none}
+.nav .right{display:flex;align-items:center;gap:18px}
+.nav a{color:var(--muted);text-decoration:none}
+.nav a:hover{color:var(--ink)}
+.nav button{background:none;border:1px solid var(--line);color:var(--muted);border-radius:999px;
+  width:34px;height:34px;cursor:pointer;font-size:15px;line-height:1}
+.nav button:hover{color:var(--ink)}
+main{max-width:680px;margin:0 auto;padding:0 22px 96px}
+.byline{margin:18px 0 0;font-family:system-ui,sans-serif;font-size:14px;color:var(--muted)}
+.byline a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+.byline a:hover{color:var(--ink)}
+h1{font-size:clamp(34px,6vw,52px);line-height:1.08;letter-spacing:-.01em;margin:48px 0 8px}
+h2{font-size:26px;line-height:1.2;margin:52px 0 6px}
+h3{font-size:20px;line-height:1.25;margin:32px 0 4px;color:var(--muted);font-weight:600}
+p{margin:0 0 20px}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:.5px}
+strong{font-weight:700}
+hr{border:0;border-top:1px solid var(--rule);margin:44px 0}
+blockquote{margin:30px 0;padding:14px 22px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);border-radius:0 8px 8px 0;color:var(--ink);font-size:20px;font-style:italic}
+blockquote p{margin:0 0 10px}
+blockquote p:last-child{margin:0}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15.5px;font-family:system-ui,sans-serif}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
+thead th{background:var(--tablehead);border-bottom:2px solid var(--line);font-weight:600}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;
+  background:color-mix(in srgb,var(--ink) 7%,transparent);padding:.1em .35em;border-radius:4px}
+.contents{margin:34px 0 8px;border:1px solid var(--line);border-radius:10px;
+  font-family:system-ui,sans-serif;font-size:15px}
+.contents summary{cursor:pointer;padding:5px 18px;color:var(--muted);font-weight:600;list-style:none}
+.contents summary::-webkit-details-marker{display:none}
+.contents summary::before{content:"\203A";display:inline-block;padding-right:7px;transition:transform .15s}
+.contents[open] summary::before{transform:rotate(90deg)}
+.contents nav{display:flex;flex-direction:column;padding:0 16px 14px}
+.contents a{color:var(--muted);text-decoration:none;padding:4px 0}
+.contents a:hover{color:var(--ink)}
+.contents .toc-h1{color:var(--ink);font-weight:700;margin-top:10px}
+.contents .toc-h2{padding-left:16px}
+footer{max-width:680px;margin:0 auto;padding:28px 22px 64px;border-top:1px solid var(--rule);
+  color:var(--muted);font-family:system-ui,sans-serif;font-size:14px}
+footer a{color:var(--muted)}
+</style>
+<script>try{var t=localStorage.getItem("proxylimen-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="./">proxylimen</a>
+  <div class="right">
+    <a href="./">Essay</a>
+    <a href="demo/">Demo</a>
+    <a href="about.html">About</a>
+    <a href="https://github.com/Kirill-Kruglov/proxylimen">GitHub</a>
+    <button id="theme" type="button" aria-label="Toggle light / dark">&#9682;</button>
+  </div>
+</nav>
+<main id="top">
+
+
+<article>
+<h1 id="appendix-a-the-measured-boundary">Appendix A — The Measured
+Boundary</h1>
+<p>This appendix carries the technical weight behind Part IV of the
+essay: exact definitions, the validated regime, the control family and
+its mechanism, the crossover tables with confidence intervals, the
+fixed-k caveat, and the stated limits of the claim. Every number below
+is copied from a committed repository artifact; <a
+href="https://github.com/Kirill-Kruglov/proxylimen/blob/main/canonical/RESULTS_CANONICAL.md"><code>canonical/RESULTS_CANONICAL.md</code></a>
+is the registry that binds each value to its source file and commit, and
+no statement here is permitted to be stronger than what that registry
+records.</p>
+<hr />
+<h2 id="a.1-the-estimator">A.1 The estimator</h2>
+<p>The blind dimension estimator is <strong>E_CAP</strong> from
+Kleindessner &amp; von Luxburg (AISTATS 2015), reconstructed in <a
+href="https://github.com/Kirill-Kruglov/proxylimen/blob/main/experiments/harness_valid/B2_2_1/PAPER_EXTRACTION.md"><code>experiments/harness_valid/B2_2_1/PAPER_EXTRACTION.md</code></a>
+directly from the paper’s PDF. Given only a directed kNN graph (an edge
+<code>i → j</code> iff <code>x_j</code> is among the <code>k</code>
+nearest samples to <code>x_i</code>):</p>
+<ul>
+<li><code>B_SP(i, 1)</code> is the radius-1 ball around vertex
+<code>i</code> in shortest-path distance — the vertex plus its
+<code>k</code> out-neighbors, so <code>|B_SP(i,1)| = k + 1</code>
+always.</li>
+<li><code>L_CAP(i) = min_{j : i→j} |B_SP(i,1) ∩ B_SP(j,1)| / (k+1)</code>
+— the smallest normalized overlap between <code>i</code>’s ball and a
+neighbor’s ball.</li>
+<li>In continuous space, the relative volume of the lens where two unit
+balls at unit distance overlap is
+<code>S(d) = I_{3/4}((d+1)/2, 1/2)</code> (regularized incomplete beta
+function), which depends injectively on <code>d</code>.</li>
+<li>The estimate is <code>E_CAP = S⁻¹(mean L_CAP)</code>: measure the
+overlap in the graph, invert the geometry that would have produced
+it.</li>
+</ul>
+<p>The intuition in one line: <strong>in low dimension, near-neighbors
+share most of their neighborhoods; as dimension grows, that shared
+overlap dies away at a rate that encodes the dimension.</strong></p>
+<h2 id="a.2-what-blind-means-operationally">A.2 What “blind” means,
+operationally</h2>
+<p>The learner path receives the kNN graph and nothing else. This is not
+a promise; it is enforced and recorded:</p>
+<ul>
+<li>The fit path is AST-scanned for forbidden truth-names (coordinates,
+distances, generator labels, <code>truth_axes</code>, …) — the scan is
+static analysis of the code, not self-report.</li>
+<li>The evaluation-oracle scan checks that no ground-truth hint enters
+the evaluation call sites. The B2.2.1 decision records
+<code>classification_success_depends_on_harness_hint: false</code> (<a
+href="https://github.com/Kirill-Kruglov/proxylimen/blob/main/experiments/harness_valid/B2_2_1/decision.json"><code>B2_2_1/decision.json</code></a>).</li>
+<li>The predecessor experiment B2.1 is the honest contrast: there the
+3D-control classification <em>did</em> depend on a harness-provided hint
+(<code>truth_axes=3</code>), the harness flagged it, and the canonical
+registry forbids citing it as blind discovery. The flag existing — and
+firing on my own earlier result — is what makes the B2.2.1 “false”
+meaningful.</li>
+</ul>
+<h2 id="a.3-the-validated-regime">A.3 The validated regime</h2>
+<p>B2.2.1 reproduces the paper’s dimension-table behavior from the graph
+alone, across 20 seeds, with every cell’s expected outcome preregistered
+— including the expected <em>failure</em>. From
+<code>B2_2_1/decision.json</code> (key <code>per_cell</code>):</p>
+<table>
+<thead>
+<tr class="header">
+<th>cell</th>
+<th style="text-align: right;">d_true</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">E_CAP mean</th>
+<th style="text-align: right;">paper E_CAP</th>
+<th>outcome</th>
+<th>expected</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>helix</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">1.00</td>
+<td>PASS</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>swiss roll</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">2.16</td>
+<td style="text-align: right;">2.14</td>
+<td>PASS</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>gaussian</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">5.33</td>
+<td style="text-align: right;">5.33</td>
+<td>PASS</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>sphere</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">5.88</td>
+<td style="text-align: right;">5.88</td>
+<td>PASS</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>sphere</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">5000</td>
+<td style="text-align: right;">6.86</td>
+<td style="text-align: right;">6.85</td>
+<td>PASS</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>cube</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">7.74</td>
+<td style="text-align: right;">7.74</td>
+<td><strong>FAIL</strong></td>
+<td><strong>FAIL</strong></td>
+</tr>
+<tr class="odd">
+<td>cube</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">5000</td>
+<td style="text-align: right;">9.24</td>
+<td style="text-align: right;">9.24</td>
+<td>PASS</td>
+<td>PASS</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>d=12, n=1000</code> failure is the estimator faltering
+exactly where its own literature predicts, preregistered as a failure
+before the run. The competing estimator E_DP was worse than E_CAP in
+every cell (<code>e_dp_worse_than_e_cap_all_cells: true</code>). The
+supported claim is bounded: literature-table rows up to
+<code>d ≤ 7</code>, with <code>d = 12</code> as boundary checks.</p>
+<h2 id="a.4-the-control-family-and-why-it-fools-the-estimator">A.4 The
+control family, and why it fools the estimator</h2>
+<p>The preregistered null is a <strong>directed random k-out
+graph</strong>: each vertex draws <code>k</code> out-neighbors uniformly
+at random — no geometry at all. Its mimicry of high-dimensional geometry
+is not a mystery; it is derived and verified in <a
+href="https://github.com/Kirill-Kruglov/proxylimen/blob/main/experiments/harness_valid/B2_3/outputs/random_control_mechanism.json"><code>B2_3/outputs/random_control_mechanism.json</code></a>:</p>
+<p>For an edge <code>i → j</code>, the balls always share at least
+<code>j</code> itself; with high probability the minimum over
+out-neighbors is <em>exactly</em> that one forced vertex, giving
+<code>L_CAP ≈ 1/(k+1)</code> — which E_CAP reads as a spuriously high
+dimension that <strong>depends on k</strong>:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">k</th>
+<th style="text-align: right;">predicted E_CAP (if min overlap = 1)</th>
+<th style="text-align: right;">empirical E_CAP (n=1000)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">9.4</td>
+<td style="text-align: right;">9.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">11.5</td>
+<td style="text-align: right;">11.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">13.1</td>
+<td style="text-align: right;">13.1</td>
+</tr>
+</tbody>
+</table>
+<p>That k-dependence is also the tell. Real geometry’s estimate moves
+only mildly under a k-sweep; the random graph’s estimate tracks
+<code>k</code> itself. The preregistered discriminator is
+<strong>k-spread</strong> — the range of estimates across
+<code>k ∈ {10, 15, 20}</code> — with a kill threshold of
+<code>2.5</code>. The random control’s k-spread is <code>3.70</code>
+(<code>B2_2_1/decision.json</code>, key
+<code>random_graph_control</code>); the geometric worlds in the
+validated regime stay well under it (per-cell spreads
+<code>0.20</code>–<code>2.03</code> in A.3).</p>
+<h2 id="a.5-the-crossover">A.5 The crossover</h2>
+<p>B2.3 asks where paired discrimination (geometric world vs. random
+control, same <code>n</code>, same pipeline) collapses as <code>d</code>
+grows. From <a
+href="https://github.com/Kirill-Kruglov/proxylimen/blob/main/experiments/harness_valid/B2_3/decision.json"><code>B2_3/decision.json</code></a>
+and <a
+href="https://github.com/Kirill-Kruglov/proxylimen/blob/main/experiments/harness_valid/B2_3/outputs/crossover_results.json"><code>outputs/crossover_results.json</code></a>:</p>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">d* (first d with paired separation ≤
+0.5)</th>
+<th style="text-align: right;">interpolated d at 0.5</th>
+<th>monotone non-increasing</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;"><strong>130</strong></td>
+<td style="text-align: right;">129.83</td>
+<td>true</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5000</td>
+<td style="text-align: right;"><strong>24</strong></td>
+<td style="text-align: right;">23.13</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p>Selected cells with Wilson 95% intervals (N = 50 paired runs per
+cell):</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">d</th>
+<th style="text-align: right;">paired separation</th>
+<th>Wilson 95% CI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">129</td>
+<td style="text-align: right;">0.60</td>
+<td>[0.46, 0.72]</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">130</td>
+<td style="text-align: right;">0.48</td>
+<td>[0.35, 0.61]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">131</td>
+<td style="text-align: right;">0.48</td>
+<td>[0.35, 0.61]</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5000</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">0.36</td>
+<td>[0.24, 0.50]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5000</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">0.04</td>
+<td>[0.01, 0.13]</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5000</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">0.00</td>
+<td>[0.00, 0.07]</td>
+</tr>
+</tbody>
+</table>
+<p>Five times the data, and the discrimination boundary of this test
+moved from <code>d ≈ 130</code> down to <code>d ≈ 24</code>. That is the
+essay’s “more data made things worse” — scoped, as it must be, to
+<em>this diagnostic against this control</em>.</p>
+<h2 id="a.6-the-mechanism-diagnostic">A.6 The mechanism diagnostic</h2>
+<p>Two candidate explanations were compared at the two crossover points
+(<a
+href="https://github.com/Kirill-Kruglov/proxylimen/blob/main/experiments/harness_valid/B2_3/outputs/local_knn_mechanism_results.json"><code>outputs/local_knn_mechanism_results.json</code></a>):</p>
+<table>
+<thead>
+<tr class="header">
+<th>metric at crossover</th>
+<th style="text-align: right;">n=1000, d=130</th>
+<th style="text-align: right;">n=5000, d=24</th>
+<th style="text-align: right;">ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>global pairwise distance CV</td>
+<td style="text-align: right;">0.0518</td>
+<td style="text-align: right;">0.1226</td>
+<td style="text-align: right;">2.36</td>
+</tr>
+<tr class="even">
+<td>edge-pair shared-neighbor P(&gt;1), k=15</td>
+<td style="text-align: right;">0.807</td>
+<td style="text-align: right;">0.861</td>
+<td style="text-align: right;"><strong>1.07</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The generic story (“distances concentrate in high dimension”) does
+not unify the two collapse points — its value differs by 2.4× between
+them. The local story does: the probability that an actual <em>edge</em>
+of the graph carries shared structure beyond the single forced overlap
+is nearly identical (≈0.8) at both crossovers. The estimator dies when
+its edges run out of surplus local overlap — when <em>near</em> stops
+meaning <em>geometry</em> and starts meaning <em>echo</em>.</p>
+<h2 id="a.7-the-fixed-k-caveat-load-bearing">A.7 The fixed-k caveat
+(load-bearing)</h2>
+<p>An exploratory diagnostic held <code>k = 15</code> fixed instead of
+sweeping it (<a
+href="https://github.com/Kirill-Kruglov/proxylimen/blob/main/experiments/harness_valid/B2_3/outputs/b2_3_diagnostics.json"><code>outputs/b2_3_diagnostics.json</code></a>,
+key <code>k_confound_fixed_k15</code>): under a fixed-k paired E_CAP
+gap, <code>n = 1000</code> showed <strong>no crossover through
+<code>d = 200</code></strong>, while <code>n = 5000</code> crossed at
+<code>d = 38</code>.</p>
+<p>So the inward shift of the boundary is established for the
+preregistered k-spread diagnostic; it is <strong>not</strong>
+established as stable under fixed k. The canonical registry states this
+must not be claimed otherwise, and the essay’s Part IV points here. The
+honest mechanism statement is correspondingly weaker: local
+edge-conditioned overlap aligns the two observed core crossover points
+better than the global explanation does — no more than that.</p>
+<h2 id="a.8-what-this-licenses-and-what-it-does-not">A.8 What this
+licenses, and what it does not</h2>
+<p>Verbatim scope warning from <code>B2_3/decision.json</code>:</p>
+<blockquote>
+<p>This result rejects tautology only with respect to the preregistered
+random k-out graph control. It does not establish that the estimator
+cannot be fooled by other non-geometric graph families.</p>
+</blockquote>
+<p>Explicitly untested (<code>not_tested_against</code>): small-world
+graphs, scale-free graphs, other non-Euclidean structured graphs.</p>
+<p>And the limits that matter for the essay’s argument:</p>
+<ul>
+<li><strong>No information-theoretic lower bound was proven.</strong>
+Nothing here shows the geometric/random distinction has left the data
+past the crossover — only that this validated channel stops extracting
+it. A different statistic might separate these families farther
+out.</li>
+<li><strong>The boundary is a property of the ensemble</strong> — world
+family, observation model (kNN graph), diagnostic (E_CAP + k-spread),
+control family, and decision rule together — not a demonstrated property
+of “contact” in the abstract.</li>
+<li><strong>All of it is one forge.</strong> Designer, experimenter, and
+interpreter are the same author with the same AI partners; the harness
+makes self-deception harder, not impossible. Independent replication is
+invited and would outweigh any further internal check.</li>
+</ul>
+<h2 id="a.9-external-references">A.9 External references</h2>
+<ul>
+<li>M. Kleindessner, U. von Luxburg. <em>Dimensionality estimation
+without distances.</em> AISTATS 2015, PMLR vol. 38, pp. 471–479. <a
+href="https://proceedings.mlr.press/v38/kleindessner15.html">proceedings.mlr.press/v38/kleindessner15.html</a></li>
+<li>F. Locatello, S. Bauer, M. Lucic, G. Rätsch, S. Gelly, B. Schölkopf,
+O. Bachem. <em>Challenging Common Assumptions in the Unsupervised
+Learning of Disentangled Representations.</em> ICML 2019, PMLR vol. 97,
+pp. 4114–4124. <a
+href="https://proceedings.mlr.press/v97/locatello19a.html">proceedings.mlr.press/v97/locatello19a.html</a>
+— the identifiability theorem referenced in Part II.</li>
+</ul>
+<h2 id="a.10-where-every-number-lives">A.10 Where every number
+lives</h2>
+<p>Every value above appears in <a
+href="https://github.com/Kirill-Kruglov/proxylimen/blob/main/canonical/RESULTS_CANONICAL.md"><code>canonical/RESULTS_CANONICAL.md</code></a>
+with the source file, JSON key, and commit hash recorded next to it. The
+decisions that carry these numbers are harness-signed;
+<code>gate_harness.verify_decision</code> accepts all five under
+<code>experiments/harness_valid/</code> and rejects every superseded
+pre-harness decision — which you can re-run yourself from the repository
+root:</p>
+<pre class="bash"><code>for f in experiments/harness_valid/*/decision.json; do
+  PYTHONPATH=. python3 -m gate_harness.verify_decision &quot;$f&quot;
+done</code></pre>
+
+</article>
+</main>
+<footer>
+  <p><strong>proxylimen</strong> — essay, experiments, the self-checking gate
+  harness, and the interactive demo:
+  <a href="https://github.com/Kirill-Kruglov/proxylimen">github.com/Kirill-Kruglov/proxylimen</a>.
+  Written one step earlier in the chain than Dario Amodei's
+  <a href="https://www.darioamodei.com/essay/machines-of-loving-grace">Machines of Loving Grace</a>
+  and <em>The Adolescence of Technology</em>: before a machine acts on the world,
+  where does the world inside it come from?</p>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement, KEY="proxylimen-theme";
+  var saved=localStorage.getItem(KEY);
+  if(saved) root.setAttribute("data-theme",saved);
+  document.getElementById("theme").addEventListener("click",function(){
+    var cur=root.getAttribute("data-theme");
+    if(!cur) cur=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+    var next=cur==="dark"?"light":"dark";
+    root.setAttribute("data-theme",next);
+    localStorage.setItem(KEY,next);
+  });
+})();
+</script>
+</body>
+</html>

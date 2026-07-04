@@ -9,6 +9,7 @@
 ([md](essay/everything-from-almost-nothing.md) ·
 [PDF](essay/everything-from-almost-nothing.pdf)) ·
 **[▶ Try the demo](https://kirill-kruglov.github.io/proxylimen/demo/)** ·
+**[Appendix A](https://kirill-kruglov.github.io/proxylimen/appendix-a.html)** ·
 **[See the evidence](canonical/RESULTS_CANONICAL.md)**
 
 The internet is a proxy of a proxy: text left behind by other people's models of
@@ -85,7 +86,10 @@ subordinate to that file.
   k-spread diagnostic stops separating uniform-hypercube geometry from the
   preregistered random k-out control. This is a discrimination boundary, not a
   dimension-accuracy or recovery boundary. In the recorded sweep, the discrete
-  crossover is `d*=130` at `n=1000` and `d*=24` at `n=5000`.
+  crossover is `d*=130` at `n=1000` and `d*=24` at `n=5000`. The inward shift is
+  established for the k-spread diagnostic only: under fixed `k=15`, `n=1000`
+  shows no crossover through `d=200` — see
+  [Appendix A](essay/appendices/A-the-measured-boundary.md).
 
 - **Random-control mimicry** is analytically explained for the preregistered
   directed random k-out graph: the mechanism gives `L_CAP ~= 1/(k+1)`, which
@@ -169,6 +173,21 @@ control and watch k-sweep catch the artifact.
   and verifier semantics.
 - [`demo/blind_dimension.html`](demo/blind_dimension.html) — interactive visual
   explanation.
+
+## The triptych
+
+This repository is one panel of three, sharing a single thesis — *do not try to
+certify intentions; build contact, consequences, and constraints that can be
+checked* — and a single honest caveat: all three come from one forge, one author,
+the same AI partners. Independent replication is invited and would outweigh any
+further internal check.
+
+- [**justitia**](https://github.com/Kirill-Kruglov/justitia) — what keeps a world
+  of powerful, evolving agents livable when no one can read anyone's soul.
+- **proxylimen** (this repo) — where a mind's world comes from, and where blind
+  derivation measurably breaks.
+- [**fallacy-cutter**](https://github.com/Kirill-Kruglov/fallacy-cutter) — the
+  fail-closed instrument both were cut with.
 
 ## License
 

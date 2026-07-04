@@ -14,7 +14,7 @@ Today the answer is: from us. From the internet — the accumulated residue of h
 
 For the past months I ran a small, stubborn research program to test whether this is necessary. Could a learner *derive* structure from minimal contact with reality, instead of absorbing our text? I built tiny worlds where the question could be asked honestly. I built an instrument whose only job was to catch me cheating — and it did, repeatedly, which is the part of the story I am most confident about.
 
-The strong version of the dream did not survive. It failed in three different, measurable ways, and one of the failures genuinely surprised me: past a certain boundary, *more data made things worse*.
+The strong version of the dream did not survive. It failed in three different, measurable ways, and one of the failures genuinely surprised me: past a certain boundary, *more data made things worse* — it brought the true world and a meaningless one closer together under the best test I had.
 
 What survived is smaller and, I believe, more useful: a precise picture of when knowledge can be derived rather than inherited — and what it costs.
 
@@ -110,6 +110,8 @@ And then the knife cut me, which is the only test that matters. Re-run through t
 
 Until it has cost you something you wanted, you do not know whether you built an instrument or a mirror.
 
+One limit of the knife has to be named here, because pretending otherwise would be the exact disease it treats. The knife was designed, wielded, and interpreted by the same hands it audits — one author, with AI partners, inside one methodology. It makes my quiet self-deceptions mechanically harder; it does not make my framing right, my metrics well-chosen, or my checks exhaustive, and it cannot certify its own blind spots. Provenance is not validity. The strongest test it cannot give me is the one I want most: replication by hands that are not mine.
+
 ---
 
 ## Part IV — The Measured Boundary
@@ -134,17 +136,17 @@ So I asked the sharpest version of the question: *where exactly does the real be
 
 It moved inward.
 
-With a thousand points, my preregistered test still separated the geometric world from the random control out to strikingly high dimension — around one hundred thirty. With five thousand points — five times the contact — the separation collapsed near dimension twenty-four. I checked the mundane explanations: the numerics were verified independently to machine precision; the effect survived holding every parameter fixed. The direction stands, and I must state it carefully, because the seductive misreading is one step away. This is a *discrimination* boundary, not a recovery boundary — the dimension was not being *recovered* out there; the real world merely remained *distinguishable from that control, under that test, in that family of worlds*. Within those stated bounds, the finding is:
+With a thousand points, my preregistered test still separated the geometric world from the random control out to strikingly high dimension — around one hundred thirty. With five thousand points — five times the contact — the separation collapsed near dimension twenty-four. I checked the mundane explanations: the numerics were verified independently to machine precision, and an analytic account of *why* the random control mimics geometry matched the measured values exactly. The direction stands, and I must state it carefully, because the seductive misreading is one step away. This is a *discrimination* boundary, not a recovery boundary — the dimension was not being *recovered* out there; the real world merely remained *distinguishable from that control, under that test, in that family of worlds*. And I owe you what was **not** shown: no theorem says the distinction has left the data; a different statistic might separate these worlds farther out; and one variant of my own test — holding the neighbor count fixed instead of sweeping it — does not reproduce the shift in the range probed. What I mapped is where *this channel*, the best I had and validated where it could be validated, goes blind. Within those stated bounds, the finding is:
 
 > More data did not extend the reach of the test. It brought the true world and the meaningless one together sooner.
 
 When I traced the mechanism, it was not the vague "everything blurs in high dimension" that people invoke and wave past. It was local and specific: the collapse tracked how often the actual neighbor-links carried shared structure beyond the single overlap they are forced to share by construction. One number unified both collapse points; the global explanations did not. The estimator was not failing in the abstract. It was running out of the local overlap it needs for *near* to mean *geometry* rather than *echo*.
 
-This was the third wall the project hit, not the first. The full walk, in one breath: a **computational** wall, known from prior mathematics — recovering relational structure in the fully general case is provably intractable, which is why I retreated to geometrically realizable worlds at all; an **identification** wall — the theorem from Part II, met experimentally: without a named handle, shape and coloring will not come apart, at any data size; and now a **statistical** wall — even where blind derivation genuinely works, it has a reach, and past that reach more contact stopped helping and began to hurt, under every check I could throw at it.
+This was the third wall the project hit, not the first. The full walk, in one breath: a **computational** wall, known from prior mathematics — recovering relational structure in the fully general case is provably intractable, which is why I retreated to geometrically realizable worlds at all; an **identification** wall — the theorem from Part II, met experimentally: without a named handle, shape and coloring will not come apart, at any data size; and now a **statistical** wall — even where blind derivation genuinely works, it has a reach, and past that reach more contact stopped helping and began to hurt every discriminating test I had. A wall of the instrument-and-world pair, measured; a wall of the world itself, only suspected.
 
-For the reader who wants to press on every claim in this part: the preregistrations, the seed policies, the leakage scans, the negative controls, and an interactive demonstration where you can try to fool the estimator yourself are in the public repository. The prose here carries only the shape of the result; the repository carries its weight.
+For the reader who wants to press on every claim in this part: the preregistrations, the seed policies, the leakage scans, the negative controls, and an interactive demonstration where you can try to fool the estimator yourself are in the public repository. The definitions, the crossover tables with confidence intervals, the fixed-neighbor caveat, and the exact file behind every number are collected in [Appendix A](appendices/A-the-measured-boundary.md). The prose here carries only the shape of the result; the repository carries its weight.
 
-> The dream did not die because the learner was weak. It died where the contact itself no longer carried the distinction we were asking the learner to derive.
+> The dream did not die because the learner was weak. It died where every instrument I trusted stopped extracting, from the contact, the distinction we were asking the learner to derive — and nothing I built can say whether the distinction was still in there.
 
 ---
 
@@ -166,7 +168,7 @@ Second: text is not the enemy. Scientific writing, instrument logs, experiment r
 
 And now the thing I most wanted to say — the suspicion that started the project and became, through the walls, a claim I can defend.
 
-We are offered a false choice about powerful minds: either absolute knowledge — cold, indifferent to human need — or human-loving bias, softening truth into something safe. Pick your dystopia. But the walls say the choice is malformed. Truth and coloring are not the same layer, and the identification wall says they can be pulled apart — *only under explicit calibration, never for free*. So the actual danger is not either pole. The danger is the fusion: a coloring wearing truth's mask, a preference presenting itself as a fact about the world — or the opposite self-deception, the claim that the layers separate on their own, no handle needed, trust me. Both are ways of pretending the calibration has been done when it hasn't.
+We are offered a false choice about powerful minds: either absolute knowledge — cold, indifferent to human need — or human-loving bias, softening truth into something safe. Pick your dystopia. But the walls say the choice is malformed. Truth and coloring are not the same layer, and the identification wall says they can be pulled apart — *only under explicit calibration, never for free*. I must keep that claim the size of its evidence: it was demonstrated in small worlds where the handle could be named and audited. Whether the same separation can be engineered inside a system of real power is a hypothesis these experiments motivate, not one they establish — between the toy and the architecture lies most of the alignment problem. So the actual danger is not either pole. The danger is the fusion: a coloring wearing truth's mask, a preference presenting itself as a fact about the world — or the opposite self-deception, the claim that the layers separate on their own, no handle needed, trust me. Both are ways of pretending the calibration has been done when it hasn't.
 
 What is *not* forbidden by anything I found is an architecture that holds the layers explicitly apart — truth earned through declared contact, values carried as a named baseline, each labeled as what it is. I will not call it the only honest architecture; I will say it is the one the experiments point toward, and the only one I can currently defend.
 
@@ -176,11 +178,13 @@ And so, the hypothesis I end on — offered with hope, and with its own conditio
 
 I began by asking what kind of learner we should build. I now think that was the wrong question — or rather, the second question.
 
-> Knowledge is not a property of the learner. It is a property of the contact between the learner and the world.
+> Knowledge is not a property of the learner. It is a property of the whole relation: the learner, the world, the contact between them — and the instrument that judges what the contact carried.
 
 The internet is one kind of contact — vast, human, uncalibrated. An oracle is another — perfect and sterile. Between them lies everything this essay tried to map: measurement, intervention, invariance, the minimal honest touch from which structure can still be forced to appear.
 
 The world cannot be derived from nothing. But perhaps it does not have to be learned from the internet's shadow either.
 
 ---
+
+*This essay is one panel of a triptych. [**justitia**](https://kirill-kruglov.github.io/justitia/) asks what keeps a world of powerful, evolving agents livable when no one can read anyone's soul — trust in identities replaced by consequences and structure. This essay asks where a mind's world comes from — trust in inherited text replaced by calibrated contact. And [**fallacy-cutter**](https://kirill-kruglov.github.io/fallacy-cutter/) is the knife both were cut with — trust in the researcher, me included, replaced by an instrument that fails closed. One thesis underneath all three: do not try to certify intentions; build contact, consequences, and constraints that can be checked.*
 
