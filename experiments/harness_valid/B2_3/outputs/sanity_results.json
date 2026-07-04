@@ -1,0 +1,251 @@
+{
+  "extended_n1000_probe": [
+    {
+      "d": 20,
+      "geo_per_k_ecap": {
+        "10": 7.8,
+        "15": 9.2,
+        "20": 9.7
+      },
+      "k_spread_geo": 1.8999999999999995,
+      "k_spread_random": 3.6999999999999993,
+      "margin_random_minus_geo": 1.7999999999999998,
+      "n": 1000,
+      "seed": 88008800
+    },
+    {
+      "d": 40,
+      "geo_per_k_ecap": {
+        "10": 8.5,
+        "15": 10.2,
+        "20": 11.1
+      },
+      "k_spread_geo": 2.5999999999999996,
+      "k_spread_random": 3.6999999999999993,
+      "margin_random_minus_geo": 1.0999999999999996,
+      "n": 1000,
+      "seed": 88008800
+    },
+    {
+      "d": 60,
+      "geo_per_k_ecap": {
+        "10": 8.7,
+        "15": 10.4,
+        "20": 11.2
+      },
+      "k_spread_geo": 2.5,
+      "k_spread_random": 3.6999999999999993,
+      "margin_random_minus_geo": 1.1999999999999993,
+      "n": 1000,
+      "seed": 88008800
+    },
+    {
+      "d": 80,
+      "geo_per_k_ecap": {
+        "10": 8.7,
+        "15": 10.6,
+        "20": 11.7
+      },
+      "k_spread_geo": 3.0,
+      "k_spread_random": 3.6999999999999993,
+      "margin_random_minus_geo": 0.6999999999999993,
+      "n": 1000,
+      "seed": 88008800
+    },
+    {
+      "d": 100,
+      "geo_per_k_ecap": {
+        "10": 8.9,
+        "15": 10.8,
+        "20": 12.0
+      },
+      "k_spread_geo": 3.0999999999999996,
+      "k_spread_random": 3.6999999999999993,
+      "margin_random_minus_geo": 0.5999999999999996,
+      "n": 1000,
+      "seed": 88008800
+    },
+    {
+      "d": 150,
+      "geo_per_k_ecap": {
+        "10": 8.8,
+        "15": 10.8,
+        "20": 12.1
+      },
+      "k_spread_geo": 3.299999999999999,
+      "k_spread_random": 3.6999999999999993,
+      "margin_random_minus_geo": 0.40000000000000036,
+      "n": 1000,
+      "seed": 88008800
+    },
+    {
+      "d": 200,
+      "geo_per_k_ecap": {
+        "10": 8.9,
+        "15": 10.9,
+        "20": 12.1
+      },
+      "k_spread_geo": 3.1999999999999993,
+      "k_spread_random": 3.6999999999999993,
+      "margin_random_minus_geo": 0.5,
+      "n": 1000,
+      "seed": 88008800
+    }
+  ],
+  "grid_justification": "Required d={6,8,10,12} sanity points did not bracket crossover at n=1000; all margins exceeded epsilon. Extended sanity probes showed loss of paired margin around high d for n=1000 and around d\u224840 for n=5000, so final grids were widened while keeping the same uniform-hypercube family.",
+  "initial_required_d_sweep_n1000": [
+    {
+      "d": 6,
+      "geo_per_k_ecap": {
+        "10": 4.7,
+        "15": 5.2,
+        "20": 5.5
+      },
+      "k_spread_geo": 0.7999999999999998,
+      "k_spread_random": 3.6999999999999993,
+      "margin_random_minus_geo": 2.8999999999999995,
+      "n": 1000,
+      "random_per_k_ecap": {
+        "10": 9.4,
+        "15": 11.5,
+        "20": 13.1
+      },
+      "seed": 88008800
+    },
+    {
+      "d": 8,
+      "geo_per_k_ecap": {
+        "10": 5.7,
+        "15": 6.4,
+        "20": 6.7
+      },
+      "k_spread_geo": 1.0,
+      "k_spread_random": 3.6999999999999993,
+      "margin_random_minus_geo": 2.6999999999999993,
+      "n": 1000,
+      "random_per_k_ecap": {
+        "10": 9.4,
+        "15": 11.5,
+        "20": 13.1
+      },
+      "seed": 88008800
+    },
+    {
+      "d": 10,
+      "geo_per_k_ecap": {
+        "10": 6.3,
+        "15": 7.1,
+        "20": 7.5
+      },
+      "k_spread_geo": 1.2000000000000002,
+      "k_spread_random": 3.6999999999999993,
+      "margin_random_minus_geo": 2.499999999999999,
+      "n": 1000,
+      "random_per_k_ecap": {
+        "10": 9.4,
+        "15": 11.5,
+        "20": 13.1
+      },
+      "seed": 88008800
+    },
+    {
+      "d": 12,
+      "geo_per_k_ecap": {
+        "10": 6.8,
+        "15": 7.8,
+        "20": 8.3
+      },
+      "k_spread_geo": 1.5000000000000009,
+      "k_spread_random": 3.6999999999999993,
+      "margin_random_minus_geo": 2.1999999999999984,
+      "n": 1000,
+      "random_per_k_ecap": {
+        "10": 9.4,
+        "15": 11.5,
+        "20": 13.1
+      },
+      "seed": 88008800
+    }
+  ],
+  "n5000_probe": [
+    {
+      "d": 12,
+      "geo_per_k_ecap": {
+        "10": 7.2,
+        "15": 8.6,
+        "20": 9.3
+      },
+      "k_spread_geo": 2.1000000000000005,
+      "k_spread_random": 3.6999999999999993,
+      "margin_random_minus_geo": 1.5999999999999988,
+      "n": 5000,
+      "seed": 88008800
+    },
+    {
+      "d": 20,
+      "geo_per_k_ecap": {
+        "10": 8.3,
+        "15": 10.2,
+        "20": 11.2
+      },
+      "k_spread_geo": 2.8999999999999986,
+      "k_spread_random": 3.6999999999999993,
+      "margin_random_minus_geo": 0.8000000000000007,
+      "n": 5000,
+      "seed": 88008800
+    },
+    {
+      "d": 40,
+      "geo_per_k_ecap": {
+        "10": 8.9,
+        "15": 11.0,
+        "20": 12.5
+      },
+      "k_spread_geo": 3.5999999999999996,
+      "k_spread_random": 3.6999999999999993,
+      "margin_random_minus_geo": 0.09999999999999964,
+      "n": 5000,
+      "seed": 88008800
+    },
+    {
+      "d": 60,
+      "geo_per_k_ecap": {
+        "10": 9.0,
+        "15": 11.2,
+        "20": 12.7
+      },
+      "k_spread_geo": 3.6999999999999993,
+      "k_spread_random": 3.6999999999999993,
+      "margin_random_minus_geo": 0.0,
+      "n": 5000,
+      "seed": 88008800
+    },
+    {
+      "d": 80,
+      "geo_per_k_ecap": {
+        "10": 9.1,
+        "15": 11.2,
+        "20": 12.8
+      },
+      "k_spread_geo": 3.700000000000001,
+      "k_spread_random": 3.6999999999999993,
+      "margin_random_minus_geo": -1.7763568394002505e-15,
+      "n": 5000,
+      "seed": 88008800
+    },
+    {
+      "d": 100,
+      "geo_per_k_ecap": {
+        "10": 9.1,
+        "15": 11.3,
+        "20": 12.8
+      },
+      "k_spread_geo": 3.700000000000001,
+      "k_spread_random": 3.6999999999999993,
+      "margin_random_minus_geo": -1.7763568394002505e-15,
+      "n": 5000,
+      "seed": 88008800
+    }
+  ],
+  "sanity_seed": 88008800
+}

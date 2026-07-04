@@ -1,0 +1,33 @@
+{
+  "task": "B1 Auxiliary-Variable Identifiability Gate",
+  "seed": 20260702,
+  "synthetic_world": "y_i_u = z_obj_i + bias_u + noise",
+  "observers": ["U0", "U1", "U2", "U3"],
+  "thresholds": {
+    "no_aux_abs_corr_max": 0.3,
+    "with_aux_corr_min": 0.9,
+    "improvement_min": 0.6,
+    "shuffled_aux_corr_max": 0.5,
+    "no_anchor_with_aux_corr_max": 0.5,
+    "random_world_corr_max": 0.3
+  },
+  "primary_metric": "Pearson correlation between estimated_z_obj and true z_obj on held-out non-anchor items",
+  "learners": {
+    "no_auxiliary_learner": "Uses y only and returns rank-normalized y for non-anchor items.",
+    "with_auxiliary_calibration_learner": "Uses y, u, and repeated anchor observations to estimate relative observer bias; returns y minus estimated bias for non-anchor items."
+  },
+  "controls": {
+    "C1": "Shuffle auxiliary labels; recovery must fail.",
+    "C2": "Remove calibration anchors; recovery must fail.",
+    "C3": "Generate observations independent of z_obj; recovery must fail.",
+    "C4": "Audit that u, anchors, and fitting procedures do not leak true z_obj."
+  },
+  "forbidden_claims": [
+    "LLM training",
+    "substrate discovery",
+    "derivability",
+    "semantic boundary generation",
+    "real-world transfer"
+  ]
+}
+

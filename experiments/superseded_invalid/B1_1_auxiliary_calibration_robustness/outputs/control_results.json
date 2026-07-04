@@ -1,0 +1,23 @@
+{
+  "controls": {
+    "C1_shuffled_auxiliary": {
+      "corr": 0.03774241829592382,
+      "passed": true
+    },
+    "C2_no_anchors": {
+      "corr": 0.15895900362362353,
+      "passed": true
+    },
+    "C3_disconnected_anchors": {
+      "anchor_graph_connected": false,
+      "corr": 0.15895900362362353,
+      "passed": true
+    },
+    "C4_random_world": {
+      "corr": -0.2657645862573657,
+      "passed": true
+    },
+    "C5_leakage_audit": "see leakage_audit.json"
+  },
+  "passed": true
+}

@@ -1,0 +1,64 @@
+{
+  "b2_2_1_empirical_k_sweep_n1000": {
+    "10": 9.4,
+    "15": 11.5,
+    "20": 13.1
+  },
+  "empirical_match": true,
+  "formula": "For directed random k-out graph, B_SP(i,1)={i}+N_i. For edge i->j, B_SP(i,1)\u2229B_SP(j,1) always contains j. It equals 1 iff N_j avoids the k forbidden vertices {i}\u222a(N_i\\{j}), with exact probability prod_{r=0}^{k-1}(n-1-k-r)/(n-1-r). L_CAP uses the min over k out-edges, so P(min intersection=1)\u22481-(1-p)^k. Thus random k-out has L_CAP\u22481/(k+1), making E_CAP rise with k and producing large k-spread.",
+  "predictions": {
+    "1000": {
+      "10": {
+        "ecap_prediction_if_min_intersection_equals_1": 9.4,
+        "edge_expected_intersection": 1.1001001001001,
+        "edge_expected_l_cap_not_min": 0.1000091000091,
+        "l_cap_if_min_intersection_equals_1": 0.09090909090909091,
+        "p_edge_intersection_equals_1_exact": 0.9038762190926326,
+        "p_vertex_min_intersection_equals_1_independence_approx": 0.9999999999326545
+      },
+      "15": {
+        "ecap_prediction_if_min_intersection_equals_1": 11.5,
+        "edge_expected_intersection": 1.2252252252252251,
+        "edge_expected_l_cap_not_min": 0.07657657657657657,
+        "l_cap_if_min_intersection_equals_1": 0.0625,
+        "p_edge_intersection_equals_1_exact": 0.7956855325472049,
+        "p_vertex_min_intersection_equals_1_independence_approx": 0.9999999999548678
+      },
+      "20": {
+        "ecap_prediction_if_min_intersection_equals_1": 13.1,
+        "edge_expected_intersection": 1.4004004004004005,
+        "edge_expected_l_cap_not_min": 0.06668573335240002,
+        "l_cap_if_min_intersection_equals_1": 0.047619047619047616,
+        "p_edge_intersection_equals_1_exact": 0.6647129645928556,
+        "p_vertex_min_intersection_equals_1_independence_approx": 0.9999999996776444
+      }
+    },
+    "5000": {
+      "10": {
+        "ecap_prediction_if_min_intersection_equals_1": 9.4,
+        "edge_expected_intersection": 1.02000400080016,
+        "edge_expected_l_cap_not_min": 0.09272763643637819,
+        "l_cap_if_min_intersection_equals_1": 0.09090909090909091,
+        "p_edge_intersection_equals_1_exact": 0.9801574061094752,
+        "p_vertex_min_intersection_equals_1_independence_approx": 1.0
+      },
+      "15": {
+        "ecap_prediction_if_min_intersection_equals_1": 11.5,
+        "edge_expected_intersection": 1.0450090018003602,
+        "edge_expected_l_cap_not_min": 0.06531306261252251,
+        "l_cap_if_min_intersection_equals_1": 0.0625,
+        "p_edge_intersection_equals_1_exact": 0.9558636498570678,
+        "p_vertex_min_intersection_equals_1_independence_approx": 1.0
+      },
+      "20": {
+        "ecap_prediction_if_min_intersection_equals_1": 13.1,
+        "edge_expected_intersection": 1.08001600320064,
+        "edge_expected_l_cap_not_min": 0.051429333485744765,
+        "l_cap_if_min_intersection_equals_1": 0.047619047619047616,
+        "p_edge_intersection_equals_1_exact": 0.922812168707698,
+        "p_vertex_min_intersection_equals_1_independence_approx": 1.0
+      }
+    }
+  },
+  "random_control_mechanism_derived": true
+}

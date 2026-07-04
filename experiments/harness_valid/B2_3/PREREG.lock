@@ -1,0 +1,6 @@
+{
+  "locked_at_git_rev": "b60683fe9a4d0732b0b7f03fd47dc062200a44ec",
+  "locked_at_utc": "2026-07-03T03:00:29.660962+00:00",
+  "note": "Two-phase commit required: this B2.3 lock was created before the harness-signed run; results/outputs are committed separately or left unstaged.",
+  "prereg_sha256": "8dee41916fb96c6872545887c32516cc8f1f5d123251768cd4ecc5916e94afdc"
+}

@@ -1,0 +1,10 @@
+{
+  "disconnected_anchor_corr": 0.1607473760914764,
+  "disconnected_anchor_graph_connected": false,
+  "no_aux_abs_corr": 0.161090124433924,
+  "passed": true,
+  "seed": 20260803,
+  "sparse_anchor_graph_connected": true,
+  "sparse_anchor_improvement": 0.8388748088900052,
+  "sparse_anchor_with_aux_corr": 0.9999649333239292
+}

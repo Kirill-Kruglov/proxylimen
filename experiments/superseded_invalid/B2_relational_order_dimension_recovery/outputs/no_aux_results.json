@@ -1,0 +1,29 @@
+{
+  "forbidden_fields": [
+    "u",
+    "anchor identity",
+    "item_id grouping",
+    "true coordinates",
+    "generated relation"
+  ],
+  "input_fields": [
+    "obs_x",
+    "obs_y"
+  ],
+  "learner": "no_auxiliary",
+  "metric": {
+    "accuracy": 0.7919630404463041,
+    "comparability_density": 0.20474198047419806,
+    "f1": 0.4738768131916582,
+    "fn": 6370,
+    "fp": 5563,
+    "precision": 0.4913596050105148,
+    "recall": 0.45759536784741145,
+    "tn": 40053,
+    "tp": 5374
+  },
+  "passed_failure_requirement": true,
+  "threshold": {
+    "relation_f1_max": 0.6
+  }
+}

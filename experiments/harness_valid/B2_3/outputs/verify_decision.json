@@ -1,0 +1,7 @@
+{
+  "command": "/usr/bin/python3 -m gate_harness.verify_decision /home/master/llm_projects/ascesis/gate_harness_experiments/B2_3/decision.json",
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "VALID   /home/master/llm_projects/ascesis/gate_harness_experiments/B2_3/decision.json\n",
+  "valid_by_gate_harness_verify_decision": true
+}

@@ -1,0 +1,12 @@
+{
+  "anchors_contain_true_z_obj_labels_for_fit": false,
+  "aux_leakage_detected": false,
+  "fit_functions_read_z_obj": false,
+  "human_authored_final_or_outcome_labels_exist": false,
+  "human_authored_outcomes_detected": false,
+  "seed_to_result_lookup_exists": false,
+  "true_z_obj_used_only_after_predictions": true,
+  "u_directly_encodes_exact_z_obj": false,
+  "u_uniquely_identifies_item_id": false,
+  "variant_to_result_lookup_exists": false
+}

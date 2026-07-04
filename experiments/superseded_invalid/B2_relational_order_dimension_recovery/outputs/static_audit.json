@@ -1,0 +1,21 @@
+{
+  "classifier_variant_conditioning_findings": [],
+  "findings": [],
+  "passed": true,
+  "patterns_scanned": [
+    "true_relation_by_item",
+    "relation_by_item",
+    "expected_relation",
+    "final_relation",
+    "dimension_label",
+    "true_dimension",
+    "status_by_seed",
+    "result_by_variant",
+    "lookup_relation",
+    "hardcoded_pass"
+  ],
+  "source_paths": [
+    "/home/master/llm_projects/ascesis/experiments/B/B2_relational_order_dimension_recovery/relational_order_toy.py",
+    "/home/master/llm_projects/ascesis/experiments/B/B2_relational_order_dimension_recovery/run_b2.py"
+  ]
+}

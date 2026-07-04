@@ -1,0 +1,25 @@
+{
+  "admissible_for_next_gate": true,
+  "aux_leakage_detected": false,
+  "dataset_generated": true,
+  "decision": "B1-PASS-AUXILIARY-IDENTIFIABILITY-SIGNAL",
+  "derivability_claim_allowed": false,
+  "human_authored_outcomes_detected": false,
+  "improvement_threshold_passed": true,
+  "llm_training_allowed": false,
+  "next_allowed_work": [
+    "B1 postmortem",
+    "B2 relational order-dimension gate spec"
+  ],
+  "no_anchor_control_passed": true,
+  "no_aux_recovery_failed": true,
+  "random_world_control_passed": true,
+  "real_world_transfer_claim_allowed": false,
+  "reason": "No-auxiliary recovery failed, auxiliary calibration recovered the latent scalar, and controls failed as required.",
+  "repeats_s4_accounting": false,
+  "s4_1_decision_confirmed": true,
+  "semantic_boundary_generator_claim_allowed": false,
+  "shuffled_aux_control_passed": true,
+  "substrate_claim_allowed": false,
+  "with_aux_recovery_succeeded": true
+}

@@ -1,0 +1,53 @@
+{
+  "chain_control_f1": {
+    "passed": true,
+    "threshold": ">= 0.95",
+    "value": 0.9991325664718084
+  },
+  "disconnected_anchor_relation_f1": {
+    "passed": true,
+    "threshold": "<= 0.65",
+    "value": 0.5858511692793421
+  },
+  "no_anchor_relation_f1": {
+    "passed": true,
+    "threshold": "<= 0.65",
+    "value": 0.5286042111196103
+  },
+  "no_aux_relation_f1": {
+    "passed": true,
+    "threshold": "<= 0.60",
+    "value": 0.4738768131916582
+  },
+  "passed": true,
+  "random_relation_2d_f1": {
+    "passed": true,
+    "threshold": "<= 0.60",
+    "value": 0.2283528457169352
+  },
+  "relation_f1_improvement": {
+    "passed": true,
+    "threshold": ">= 0.30",
+    "value": 0.5226715312920849
+  },
+  "shuffled_aux_relation_f1": {
+    "passed": true,
+    "threshold": "<= 0.65",
+    "value": 0.29776635063474205
+  },
+  "sparse_anchor_relation_f1": {
+    "passed": true,
+    "threshold": ">= 0.85",
+    "value": 0.997096217234343
+  },
+  "three_d_control_2d_f1": {
+    "passed": true,
+    "threshold": "<= 0.80",
+    "value": 0.6394600533668184
+  },
+  "with_aux_relation_f1": {
+    "passed": true,
+    "threshold": ">= 0.90",
+    "value": 0.9965483444837431
+  }
+}

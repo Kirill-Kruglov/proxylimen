@@ -1,0 +1,10 @@
+{
+  "anchors_include_true_z_obj_labels_for_fit": false,
+  "evaluation_truth_used_only_after_predictions": true,
+  "human_authored_outcome_labels_used": false,
+  "leakage_detected": false,
+  "learner_fit_reads_true_z_obj": false,
+  "statistical_confounding_present_by_design": true,
+  "u_directly_encodes_exact_z_obj": false,
+  "u_uniquely_identifies_item_id": false
+}

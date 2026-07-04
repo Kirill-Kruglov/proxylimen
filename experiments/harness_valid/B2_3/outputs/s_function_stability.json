@@ -1,0 +1,48 @@
+{
+  "independent_reference_method": "log-domain Gauss-Legendre quadrature using numpy.polynomial.legendre.leggauss; scipy and mpmath unavailable",
+  "note": "invert_S uses B2.2 grid 0.5..30; large-d S values below the grid floor clamp to 30.0, but B2.3 E_CAP values remained in the observed 8..13 range.",
+  "rows": [
+    {
+      "absolute_error": 3.0982161280945775e-15,
+      "continued_fraction_S": 0.015117916451873012,
+      "d": 20,
+      "gauss_legendre_reference": 0.015117916451869913,
+      "invert_S_of_local_S": 20.0,
+      "relative_error": 2.0493671452400199e-13
+    },
+    {
+      "absolute_error": 7.180128887285253e-17,
+      "continued_fraction_S": 0.00013779151106967002,
+      "d": 50,
+      "gauss_legendre_reference": 0.00013779151106959822,
+      "invert_S_of_local_S": 30.0,
+      "relative_error": 5.2108644658513e-13
+    },
+    {
+      "absolute_error": 7.823143361281515e-20,
+      "continued_fraction_S": 7.559176825689924e-08,
+      "d": 100,
+      "gauss_legendre_reference": 7.559176825682101e-08,
+      "invert_S_of_local_S": 30.0,
+      "relative_error": 1.0349200106951586e-12
+    },
+    {
+      "absolute_error": 7.179669223018857e-23,
+      "continued_fraction_S": 4.696227812380449e-11,
+      "d": 150,
+      "gauss_legendre_reference": 4.6962278123732696e-11,
+      "invert_S_of_local_S": 30.0,
+      "relative_error": 1.5288162137497679e-12
+    },
+    {
+      "absolute_error": 6.228214618900932e-26,
+      "continued_fraction_S": 3.07815039472206e-14,
+      "d": 200,
+      "gauss_legendre_reference": 3.078150394715832e-14,
+      "invert_S_of_local_S": 30.0,
+      "relative_error": 2.0233626757135458e-12
+    }
+  ],
+  "scipy_available": false,
+  "scipy_import_error": "ModuleNotFoundError(\"No module named 'scipy'\")"
+}

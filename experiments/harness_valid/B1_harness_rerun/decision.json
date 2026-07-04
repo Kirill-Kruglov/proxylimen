@@ -1,0 +1,60 @@
+{
+  "_harness_provenance": {
+    "evaluation_oracle_ran": true,
+    "harness_version": "53b59235a56aba8feeacf71df8d4691e9e3814309a0c37c35c1e22ee50cbcb9f",
+    "leakage_scan_verified": true,
+    "prereg_lock_verified": true,
+    "tautology_check_ran": true,
+    "written_by": "gate_harness.runner.run_gate"
+  },
+  "classification_success_depends_on_harness_hint": false,
+  "construction_may_be_tautological": true,
+  "controls": {
+    "no_anchor_with_aux_corr": {
+      "passed": true,
+      "value": 0.23254348554400373
+    },
+    "random_world_corr": {
+      "passed": true,
+      "value": 0.005953949876847943
+    },
+    "shuffled_aux_corr": {
+      "passed": true,
+      "value": 0.23254348554400373
+    }
+  },
+  "controls_pass": true,
+  "decision": "B1-PASS-AUXILIARY-IDENTIFIABILITY",
+  "gate": "B1_harness_rerun",
+  "information_ratio": 0.04697540404970473,
+  "primary_metric_verdict": "PASS",
+  "recovery": {
+    "mean_improvement": 0.791446153063777,
+    "mean_no_aux_abs_corr": 0.20851995111223512,
+    "mean_with_aux_corr": 0.9999661041760123,
+    "recovery_pass": true
+  },
+  "seed_count": 24,
+  "seed_policy": {
+    "admissible": true,
+    "min_seeds_for_core": 20,
+    "per_metric": {
+      "recovery_pearson_corr": {
+        "min_required": 20,
+        "role": "core",
+        "seeds_used": 24,
+        "verdict": "PASS"
+      }
+    }
+  },
+  "thresholds": {
+    "improvement_min": 0.6,
+    "information_ratio_min": 0.5,
+    "no_anchor_with_aux_corr_max": 0.5,
+    "no_aux_abs_corr_max": 0.3,
+    "random_world_corr_max": 0.3,
+    "seed_count_min": 20,
+    "shuffled_aux_corr_max": 0.5,
+    "with_aux_corr_min": 0.9
+  }
+}

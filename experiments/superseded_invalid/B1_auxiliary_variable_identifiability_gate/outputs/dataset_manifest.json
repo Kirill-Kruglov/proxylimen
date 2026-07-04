@@ -1,0 +1,41 @@
+{
+  "anchor_item_count": 5,
+  "anchor_record_count": 20,
+  "formula": "y_i_u = z_obj_i + bias_u + noise",
+  "group_centers": {
+    "U0": -2.4,
+    "U1": -0.8,
+    "U2": 0.8,
+    "U3": 2.4
+  },
+  "heldout_non_anchor_record_count": 320,
+  "learner_input_fields": [
+    "record_id",
+    "item_id",
+    "u",
+    "y",
+    "is_anchor"
+  ],
+  "observers": [
+    "U0",
+    "U1",
+    "U2",
+    "U3"
+  ],
+  "random_world": false,
+  "record_count": 340,
+  "s4_1_prerequisite": {
+    "confirmed": true,
+    "decision": "S4.1-PASS-GATE-CHAIN-VERIFICATION-REPAIRED",
+    "error": null,
+    "path": "/home/master/llm_projects/ascesis/experiments/S/S4_tiny_boundary_accounting_replay_implementation/S4_1_decision.json"
+  },
+  "seed": 20260702,
+  "true_biases_hidden_from_learners": {
+    "U0": 2.4,
+    "U1": 0.8,
+    "U2": -0.8,
+    "U3": -2.4
+  },
+  "truth_field_used_only_for_evaluation": "z_obj"
+}

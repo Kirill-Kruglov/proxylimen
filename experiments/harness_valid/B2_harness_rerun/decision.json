@@ -1,0 +1,90 @@
+{
+  "_harness_provenance": {
+    "evaluation_oracle_ran": true,
+    "harness_version": "53b59235a56aba8feeacf71df8d4691e9e3814309a0c37c35c1e22ee50cbcb9f",
+    "leakage_scan_verified": true,
+    "prereg_lock_verified": true,
+    "tautology_check_ran": true,
+    "written_by": "gate_harness.runner.run_gate"
+  },
+  "affected_metrics": [
+    "truth_axes"
+  ],
+  "anchor_fraction_sparse": 0.1,
+  "classification_success_depends_on_harness_hint": true,
+  "construction_may_be_tautological": false,
+  "controls_pass_fraction": 1.0,
+  "decision": "B2.1-PASS-LABEL-FREE-ORDER-DIMENSION",
+  "final_seeds": [
+    20260702,
+    20260712,
+    20260722,
+    20260732,
+    20260742,
+    20260752,
+    20260762,
+    20260772,
+    20260782,
+    20260792,
+    20260802,
+    20260812,
+    20260822,
+    20260832,
+    20260842,
+    20260852,
+    20260862,
+    20260872,
+    20260882,
+    20260892,
+    20260902,
+    20260912,
+    20260922,
+    20260932
+  ],
+  "gate": "B2_harness_rerun",
+  "harness_hint_warnings": [
+    "classification success on this control depended on harness-provided ground-truth hint (truth_axes=3); this is NOT evidence of unsupervised recovery.",
+    "classification success on this control depended on harness-provided ground-truth hint (truth_axes=3); this is NOT evidence of unsupervised recovery."
+  ],
+  "information_ratio": 0.8915238326640017,
+  "mean_no_aux_f1": 0.5118956978113977,
+  "mean_sparse_f1": 0.9965407969143273,
+  "mean_with_aux_f1": 0.9969994875628853,
+  "order_dimension_pass_fraction": 1.0,
+  "per_metric_verdicts": {
+    "order_dimension_classification": "PASS",
+    "recovery_relation_f1": "PASS"
+  },
+  "recovery_pass_fraction": 1.0,
+  "seed_count": 24,
+  "seed_policy": {
+    "admissible": true,
+    "min_seeds_for_core": 20,
+    "per_metric": {
+      "order_dimension_classification": {
+        "min_required": 20,
+        "role": "core",
+        "seeds_used": 24,
+        "verdict": "PASS"
+      },
+      "recovery_relation_f1": {
+        "min_required": 20,
+        "role": "core",
+        "seeds_used": 24,
+        "verdict": "PASS"
+      }
+    }
+  },
+  "thresholds": {
+    "controls_pass_fraction_min": 0.8,
+    "information_ratio_min": 0.5,
+    "max_anchor_fraction_sparse": 0.15,
+    "no_aux_relation_f1_max": 0.6,
+    "order_dimension_pass_fraction_min": 0.8,
+    "recovery_pass_fraction_min": 0.8,
+    "relation_f1_improvement_min": 0.3,
+    "seed_count_min": 20,
+    "sparse_anchor_relation_f1_min": 0.85,
+    "with_aux_relation_f1_min": 0.9
+  }
+}

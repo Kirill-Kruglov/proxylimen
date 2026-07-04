@@ -1,0 +1,37 @@
+{
+  "task": "B2 Relational Order-Dimension Recovery Gate",
+  "seed_start": 20260702,
+  "seed_count": 12,
+  "item_count_per_seed": 240,
+  "relation": "2D product order with margin",
+  "primary_metric": "relation_f1 over ordered held-out non-anchor item pairs",
+  "thresholds": {
+    "no_aux_relation_f1_max": 0.6,
+    "with_aux_relation_f1_min": 0.9,
+    "relation_f1_improvement_min": 0.3,
+    "sparse_anchor_relation_f1_min": 0.85,
+    "shuffled_aux_relation_f1_max": 0.65,
+    "no_anchor_relation_f1_max": 0.65,
+    "disconnected_anchor_relation_f1_max": 0.65,
+    "random_relation_2d_f1_max": 0.6,
+    "chain_control_f1_min": 0.95,
+    "three_d_control_2d_f1_max": 0.8,
+    "multiseed_pass_fraction_min": 0.8
+  },
+  "toy_order_dimension_proxy": [
+    "ORDER_1D",
+    "PRODUCT_2D",
+    "NOT_LOW_DIMENSIONAL_OR_INCONCLUSIVE",
+    "UNDERDIMENSIONED_FOR_2D"
+  ],
+  "forbidden_claims": [
+    "LLM training",
+    "substrate discovery",
+    "derivability",
+    "semantic boundary generation",
+    "real-world transfer",
+    "general order-dimension recovery",
+    "general disentanglement"
+  ]
+}
+

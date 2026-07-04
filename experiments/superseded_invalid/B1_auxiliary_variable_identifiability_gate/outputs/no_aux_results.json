@@ -1,0 +1,15 @@
+{
+  "input_fields": [
+    "y"
+  ],
+  "learner": "no_auxiliary_learner",
+  "metric": {
+    "abs_pearson_corr": 0.2338839303693749,
+    "heldout_count": 320,
+    "pearson_corr": 0.2338839303693749
+  },
+  "passes_failure_requirement": true,
+  "threshold": {
+    "abs_pearson_corr_max": 0.3
+  }
+}

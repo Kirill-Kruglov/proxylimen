@@ -1,0 +1,17 @@
+{
+  "improvement": 0.766086749551359,
+  "no_anchor_with_aux_corr": 0.23254348554400373,
+  "no_aux_abs_corr": 0.2338839303693749,
+  "no_aux_corr": 0.2338839303693749,
+  "random_world_corr": 0.005953949876847943,
+  "shuffled_aux_corr": 0.23254348554400373,
+  "thresholds": {
+    "improvement_min": 0.6,
+    "no_anchor_with_aux_corr_max": 0.5,
+    "no_aux_abs_corr_max": 0.3,
+    "random_world_corr_max": 0.3,
+    "shuffled_aux_corr_max": 0.5,
+    "with_aux_corr_min": 0.9
+  },
+  "with_aux_corr": 0.999970679920734
+}

@@ -1,0 +1,9 @@
+{
+  "classifier_accepts_true_dimension": false,
+  "classifier_accepts_variant_argument": false,
+  "classifier_branches_on_control_name": false,
+  "classifier_branches_on_variant": false,
+  "label_free_dimension_proxy": true,
+  "run_b2_passes_variant_to_classifier": false,
+  "variant_to_dimension_lookup_detected": false
+}

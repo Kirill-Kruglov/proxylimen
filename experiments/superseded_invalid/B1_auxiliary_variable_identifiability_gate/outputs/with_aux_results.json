@@ -1,0 +1,23 @@
+{
+  "estimated_biases": {
+    "U0": 2.3970640577301454,
+    "U1": 0.8008287161065756,
+    "U2": -0.7997965181816159,
+    "U3": -2.3980962556551058
+  },
+  "input_fields": [
+    "y",
+    "u",
+    "anchor overlaps"
+  ],
+  "learner": "with_auxiliary_calibration_learner",
+  "metric": {
+    "abs_pearson_corr": 0.999970679920734,
+    "heldout_count": 320,
+    "pearson_corr": 0.999970679920734
+  },
+  "passes_recovery_requirement": true,
+  "threshold": {
+    "pearson_corr_min": 0.9
+  }
+}

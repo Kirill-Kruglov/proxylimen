@@ -1,0 +1,32 @@
+{
+  "admissible_for_next_gate": true,
+  "b1_1_decision_confirmed": true,
+  "b2_pass_confirmed": true,
+  "chain_label_free_classification_passed": true,
+  "classifier_label_free": true,
+  "decision": "B2.1-PASS-LABEL-FREE-DIMENSION-PROXY-REPAIRED",
+  "derivability_claim_allowed": false,
+  "general_disentanglement_claim_allowed": false,
+  "general_order_dimension_claim_allowed": false,
+  "leakage_audit_passed": true,
+  "llm_training_allowed": false,
+  "next_allowed_work": [
+    "B2.1 postmortem",
+    "B3 relational robustness / adversarial controls spec"
+  ],
+  "overbroad_repair_detected": false,
+  "overclaim_detected": false,
+  "product2d_label_free_classification_passed": true,
+  "random_relation_not_overclaimed": true,
+  "real_world_transfer_claim_allowed": false,
+  "reason": "B2 order-dimension proxy now classifies controls by recovered coordinate and relation statistics without generator-label input.",
+  "relation_recovery_regression_passed": true,
+  "s4_1_decision_confirmed": true,
+  "semantic_boundary_generator_claim_allowed": false,
+  "static_audit_passed": true,
+  "substrate_claim_allowed": false,
+  "three_d_not_overclaimed": true,
+  "three_d_overadmission_audit_passed": true,
+  "variant_argument_removed_from_classifier": true,
+  "variant_oracle_audit_passed": true
+}

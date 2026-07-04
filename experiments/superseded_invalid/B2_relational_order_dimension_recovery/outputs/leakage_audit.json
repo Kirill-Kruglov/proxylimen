@@ -1,0 +1,15 @@
+{
+  "anchors_contain_true_coordinate_labels_for_fit": false,
+  "aux_leakage_detected": false,
+  "evaluation_truth_used_only_after_predictions": true,
+  "fit_functions_read_true_coordinates_or_relation": false,
+  "human_authored_final_or_outcome_labels_exist": false,
+  "human_authored_outcomes_detected": false,
+  "relation_label_leakage_detected": false,
+  "seed_to_result_lookup_exists": false,
+  "true_coordinates_used_during_fitting": false,
+  "truth_matrix_used_during_fitting": false,
+  "u_directly_encodes_relation_label": false,
+  "u_uniquely_identifies_item_id": false,
+  "variant_to_result_lookup_exists": false
+}

@@ -1,0 +1,21 @@
+{
+  "baseline_results": {
+    "NO_AUX_GLOBAL_STANDARDIZE": {
+      "abs_pearson_corr": 0.31253299890661973,
+      "heldout_count": 320,
+      "pearson_corr": 0.31253299890661973
+    },
+    "NO_AUX_QUANTILE_SEGMENT": {
+      "abs_pearson_corr": 0.3064511926284344,
+      "heldout_count": 320,
+      "pearson_corr": 0.3064511926284344
+    },
+    "NO_AUX_RAW_RANK": {
+      "abs_pearson_corr": 0.30799841410283424,
+      "heldout_count": 320,
+      "pearson_corr": 0.30799841410283424
+    }
+  },
+  "max_no_aux_abs_corr": 0.31253299890661973,
+  "passed": true
+}

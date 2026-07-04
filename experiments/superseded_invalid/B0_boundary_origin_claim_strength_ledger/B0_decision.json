@@ -1,0 +1,32 @@
+{
+  "decision": "B0-PASS-BOUNDARY-SOURCES-SEPARATED",
+  "reason": "Boundary sources are separable if S2 is downgraded from boundary generator to boundary-accounting / toy replay protocol: S0-S2 use grammar/form boundaries, rule processing, human-authored finite fields, toy consequence tokens, Goodhart/viability guards, and limited population fields, but none of these are treated as derived truth, substrate, grounding, or learner evidence.",
+  "boundary_sources_separated": true,
+  "s2_interpretation": "boundary-accounting / toy replay protocol, not boundary generator",
+  "human_authored_boundary_as_derived": false,
+  "protective_boundary_as_truth": false,
+  "grammar_boundary_as_semantic": false,
+  "rule_boundary_contentful": false,
+  "allowed_claim_strength": [
+    "FORM_ONLY",
+    "BOUNDARY_ACCOUNTING",
+    "TOY_REPLAY_DETERMINISTIC",
+    "TOY_CONSEQUENCE_PROTOCOL",
+    "VIABILITY_SHIELD",
+    "EXTERNAL_CONTACT_REQUIRED"
+  ],
+  "forbidden_claim_strength": [
+    "RULE_GENERATED_CONTENT",
+    "DERIVATION_EVIDENCE",
+    "SUBSTRATE_CLAIM"
+  ],
+  "s3_allowed": true,
+  "s3_allowed_only_as": "tiny implementation spec for boundary-accounting / replay protocol",
+  "implementation_allowed": false,
+  "llm_training_allowed": false,
+  "substrate_claim_allowed": false,
+  "derivability_claim_allowed": false,
+  "next_allowed_work": [
+    "S3 tiny implementation spec for boundary-accounting / replay protocol"
+  ]
+}

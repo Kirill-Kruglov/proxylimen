@@ -1,0 +1,119 @@
+{
+  "leakage_scanner_estimator_facing_only": {
+    "confirmed": true,
+    "fit_path_functions_scanned": [
+      "e_cap",
+      "e_dp",
+      "l_cap_local",
+      "l_dp_local",
+      "_ball1",
+      "learner_view"
+    ],
+    "leakage_report": {
+      "computed_by": "ast_scan",
+      "fit_path_functions_scanned": [
+        "e_cap",
+        "e_dp",
+        "l_cap_local",
+        "l_dp_local",
+        "_ball1",
+        "learner_view"
+      ],
+      "forbidden_names": [
+        "coordinates",
+        "coords",
+        "d_true",
+        "dimension_label",
+        "distances",
+        "expected_classification",
+        "generator",
+        "generator_type",
+        "ground_truth",
+        "result_by_variant",
+        "seed_to_result",
+        "status_by_seed",
+        "true_bias",
+        "true_coordinates",
+        "true_d",
+        "true_dimension",
+        "true_relation",
+        "true_z",
+        "truth_axes",
+        "variant",
+        "x_value",
+        "y_value",
+        "z_obj",
+        "z_value"
+      ],
+      "leak_hits": [],
+      "not_verifiable_present": false,
+      "passed": true,
+      "per_function": {
+        "_ball1": {
+          "computed_by": "ast_scan",
+          "evidence": [],
+          "leak_detected": false
+        },
+        "e_cap": {
+          "computed_by": "ast_scan",
+          "evidence": [],
+          "leak_detected": false
+        },
+        "e_dp": {
+          "computed_by": "ast_scan",
+          "evidence": [],
+          "leak_detected": false
+        },
+        "l_cap_local": {
+          "computed_by": "ast_scan",
+          "evidence": [],
+          "leak_detected": false
+        },
+        "l_dp_local": {
+          "computed_by": "ast_scan",
+          "evidence": [],
+          "leak_detected": false
+        },
+        "learner_view": {
+          "computed_by": "ast_scan",
+          "evidence": [],
+          "leak_detected": false
+        }
+      }
+    },
+    "world_generator_scanned": false
+  },
+  "random_control_kspread_sanity_vs_final": {
+    "final_20_seed_k_spread": 3.6999999999999993,
+    "final_20_seed_per_k_mean_ecap": {
+      "10": 9.4,
+      "15": 11.5,
+      "20": 13.1
+    },
+    "final_seed_policy": [
+      100000,
+      100001,
+      100002,
+      100003,
+      100004,
+      100005,
+      100006,
+      100007,
+      100008,
+      100009,
+      100010,
+      100011,
+      100012,
+      100013,
+      100014,
+      100015,
+      100016,
+      100017,
+      100018,
+      100019
+    ],
+    "matches_old_decision_value": true,
+    "old_decision_k_spread": 3.6999999999999993,
+    "old_decision_value_source": "sanity path: _k_spread_ecap('random_graph_control', 1000, SANITY_SEED + 900)"
+  }
+}

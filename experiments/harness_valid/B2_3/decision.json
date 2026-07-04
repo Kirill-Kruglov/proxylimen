@@ -1,0 +1,90 @@
+{
+  "_harness_provenance": {
+    "evaluation_oracle_ran": true,
+    "harness_version": "53b59235a56aba8feeacf71df8d4691e9e3814309a0c37c35c1e22ee50cbcb9f",
+    "leakage_scan_verified": true,
+    "prereg_lock_verified": true,
+    "tautology_check_ran": true,
+    "written_by": "gate_harness.runner.run_gate"
+  },
+  "adaptive_refinement_used": true,
+  "claim_scope": "B2.3 tests whether the finite-sample discrimination boundary shifts with n in the direction suggested by asymptotic consistency, not whether the theorem is confirmed. B2.3 does not estimate the dimension-accuracy boundary; it estimates the random-control discrimination boundary for the uniform hypercube family under the already-validated E_CAP+k-spread diagnostic.",
+  "classification_success_depends_on_harness_hint": false,
+  "construction_may_be_tautological": false,
+  "control_rejection_secondary_metric": true,
+  "crossover_wilson_ci_warning_cells": [
+    {
+      "N": 20,
+      "ci": {
+        "lower": 0.4810271816464765,
+        "upper": 0.8545227551323956
+      },
+      "d": 120,
+      "n": 1000
+    },
+    {
+      "N": 20,
+      "ci": {
+        "lower": 0.21880653237281708,
+        "upper": 0.6134184992377468
+      },
+      "d": 140,
+      "n": 1000
+    },
+    {
+      "N": 20,
+      "ci": {
+        "lower": 0.1454772448676043,
+        "upper": 0.5189728183535235
+      },
+      "d": 150,
+      "n": 1000
+    }
+  ],
+  "d_star_by_n": {
+    "1000": {
+      "linear_interpolated_d_at_0_5": 129.83333333333334,
+      "monotonic_nonincreasing": true,
+      "monotonicity_violations": [],
+      "smallest_d_with_paired_separation_le_0_5": 130
+    },
+    "5000": {
+      "linear_interpolated_d_at_0_5": 23.125,
+      "monotonic_nonincreasing": true,
+      "monotonicity_violations": [],
+      "smallest_d_with_paired_separation_le_0_5": 24
+    }
+  },
+  "d_star_shift_5000_minus_1000": -106,
+  "decision": "B2.3-PASS-DISCRIMINATION-CROSSOVER-MAPPED",
+  "derivability_claim_allowed": false,
+  "dimension_accuracy_boundary_claim_allowed": false,
+  "epsilon": 0.5,
+  "gate": "B2.3 \u2014 Discrimination Crossover Mapping",
+  "general_order_dimension_claim_allowed": false,
+  "geo_stability_secondary_metric": true,
+  "information_ratio": null,
+  "no_internet_data": true,
+  "no_llm_training": true,
+  "no_natural_language_corpus": true,
+  "not_tested_against": [
+    "small_world_graphs",
+    "scale_free_graphs",
+    "other_non_euclidean_structured_graphs"
+  ],
+  "primary_metric": "paired_separation",
+  "random_control_discrimination_boundary_claim_allowed": true,
+  "random_control_mechanism_derived": true,
+  "random_control_mechanism_formula": "For directed random k-out graph, B_SP(i,1)={i}+N_i. For edge i->j, B_SP(i,1)\u2229B_SP(j,1) always contains j. It equals 1 iff N_j avoids the k forbidden vertices {i}\u222a(N_i\\{j}), with exact probability prod_{r=0}^{k-1}(n-1-k-r)/(n-1-r). L_CAP uses the min over k out-edges, so P(min intersection=1)\u22481-(1-p)^k. Thus random k-out has L_CAP\u22481/(k+1), making E_CAP rise with k and producing large k-spread.",
+  "real_world_transfer_claim_allowed": false,
+  "reason": "Completed preregistered paired k-spread sweep against random k-out control; mapped discrimination crossover where bracketed.",
+  "right_shift_with_n_observed": false,
+  "step0_leakage_scanner_estimator_facing_only_confirmed": true,
+  "step0_random_control_final_20_seed_kspread": 3.6999999999999993,
+  "step0_random_control_final_20_seed_kspread_recomputed": true,
+  "step0_random_control_old_decision_value_source": "sanity path: _k_spread_ecap('random_graph_control', 1000, SANITY_SEED + 900)",
+  "step0_world_generator_scanned_by_leakage_scanner": false,
+  "substrate_claim_allowed": false,
+  "tautology_check_scope": "preregistered_random_k_out_control_only",
+  "tautology_warning": "This result rejects tautology only with respect to the preregistered random k-out graph control. It does not establish that the estimator cannot be fooled by other non-geometric graph families."
+}

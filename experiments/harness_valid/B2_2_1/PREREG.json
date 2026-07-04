@@ -1,0 +1,84 @@
+{
+  "gate": "B2_2_1",
+  "metadata": {
+    "estimators_reused_unchanged_from": "B2_2 (validated: reproduce Table 1 to ~2 decimals)",
+    "gate_seeds": "100000 + i, i in 0..19",
+    "runs_deviation": "20 seeds (seed_policy floor) vs paper's 100 runs",
+    "sanity_seed_disjoint": 77770000,
+    "scipy_deviation": "scipy unavailable; incomplete beta via Numerical-Recipes CF, validated",
+    "supersedes": "B2_2 (same science, repaired: PAPER_EXTRACTION.md, side-channel, k-sweep)"
+  },
+  "threshold_change_rationale": {},
+  "thresholds": {
+    "B_SP_definition": "DIRECTED shortest-path ball (paper p.2, verbatim in PAPER_EXTRACTION.md); out-edges only, not symmetrized",
+    "S_of_d": "S(d)=I_{3/4}((d+1)/2,1/2) (paper Eq.1, p.3); inverted via fine lookup grid d=0.5..30 step 0.1",
+    "blind_recovery_role": "core",
+    "cells": {
+      "cube_d12_n1000": {
+        "d_true": 12,
+        "expected": "FAIL",
+        "n": 1000,
+        "paper_ecap": 7.74,
+        "tolerance": 3.0
+      },
+      "cube_d12_n5000": {
+        "d_true": 12,
+        "expected": "PASS",
+        "n": 5000,
+        "paper_ecap": 9.24,
+        "tolerance": 3.0
+      },
+      "gaussian_d5_n1000": {
+        "d_true": 5,
+        "expected": "PASS",
+        "n": 1000,
+        "paper_ecap": 5.33,
+        "tolerance": 1.0
+      },
+      "helix_d1_n1000": {
+        "d_true": 1,
+        "expected": "PASS",
+        "n": 1000,
+        "paper_ecap": 1.0,
+        "tolerance": 0.5
+      },
+      "sphere_d7_n1000": {
+        "d_true": 7,
+        "expected": "PASS",
+        "n": 1000,
+        "paper_ecap": 5.88,
+        "tolerance": 2.0
+      },
+      "sphere_d7_n5000": {
+        "d_true": 7,
+        "expected": "PASS",
+        "n": 5000,
+        "paper_ecap": 6.85,
+        "tolerance": 2.0
+      },
+      "swiss_d2_n1000": {
+        "d_true": 2,
+        "expected": "PASS",
+        "n": 1000,
+        "paper_ecap": 2.14,
+        "tolerance": 0.5
+      }
+    },
+    "e_dp_must_underestimate_vs_e_cap": true,
+    "geometric_worlds_must_be_k_stable": "each geometric world k-spread over {10,15,20} < 2.5",
+    "k_rule": "k=15 if n<=1000 else k=20 (paper Section 4.1, p.6, verbatim)",
+    "kill_condition": "random_graph_control rejected as non-geometric iff E_CAP outside all cell bands OR k-spread over {10,15,20} > 2.5; derived from sanity seed 77770000 (control k-spread 3.70 vs geometric cube 1.37)",
+    "kill_kspread_threshold": 2.5,
+    "method": "Kleindessner & von Luxburg, AISTATS 2015, PMLR v38 pp.471-479; E_CAP (spherical-cap) + E_DP (doubling) baseline",
+    "seed_count_min": 20,
+    "side_channel_fix": "learner_view emits id-sorted (order-free) adjacency; no ordinal-distance leak (B2.2 leaked distance-rank order)",
+    "split_half_consistency_max": 0.5,
+    "tolerance_sources": {
+      "d12": "+/-3; Table 1 rows 6-7 (cube [0,1]^12), E_CAP 7.74 (n=1000, deviation 4.26 -> EXPECTED FAIL) / 9.24 (n=5000, deviation 2.76 -> PASS)",
+      "d1_d2": "+/-0.5 (round-to-integer); Table 1 rows 1-2, E_CAP 1.00 and 2.14",
+      "d3": "DROPPED: no d=3 cell exists anywhere in the paper's Table 1; a tolerance could not be sourced without inventing it",
+      "d5": "+/-1; Table 1 row 3 (N_5 Gaussian), E_CAP 5.33 (deviation 0.33)",
+      "d7": "+/-2; Table 1 rows 4-5 (sphere S^7), E_CAP 5.88 (n=1000) / 6.85 (n=5000); documented underestimation at high d, Section 4.3"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "anchor_mode": "complete",
+  "b1_1_prerequisite": {
+    "confirmed": true,
+    "decision": "B1.1-PASS-ROBUST-AUXILIARY-CALIBRATION-SIGNAL",
+    "error": null,
+    "path": "/home/master/llm_projects/ascesis/experiments/B/B1_1_auxiliary_calibration_robustness/B1_1_decision.json"
+  },
+  "learner_fields": [
+    "item_id",
+    "u",
+    "obs_x",
+    "obs_y",
+    "is_anchor",
+    "anchor shared item identity"
+  ],
+  "margin": 0.035,
+  "non_anchor_item_count": 240,
+  "observer_count": 4,
+  "observer_transforms": {
+    "U0": {
+      "sx": 1.0,
+      "sy": 1.0,
+      "tx": 0.0,
+      "ty": 0.0
+    },
+    "U1": {
+      "sx": 0.62,
+      "sy": 1.45,
+      "tx": 0.75,
+      "ty": -0.42
+    },
+    "U2": {
+      "sx": 1.55,
+      "sy": 0.58,
+      "tx": -0.48,
+      "ty": 0.82
+    },
+    "U3": {
+      "sx": 0.48,
+      "sy": 0.72,
+      "tx": 0.95,
+      "ty": 0.55
+    }
+  },
+  "random_relation": false,
+  "s4_1_prerequisite": {
+    "confirmed": true,
+    "decision": "S4.1-PASS-GATE-CHAIN-VERIFICATION-REPAIRED",
+    "error": null,
+    "path": "/home/master/llm_projects/ascesis/experiments/S/S4_tiny_boundary_accounting_replay_implementation/S4_1_decision.json"
+  },
+  "seed": 20260702,
+  "truth_used_only_for_evaluation": [
+    "x_value",
+    "y_value",
+    "z_value",
+    "generated relation"
+  ],
+  "variant": "product2d"
+}

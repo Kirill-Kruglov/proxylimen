@@ -1,0 +1,36 @@
+{
+  "C1_shuffled_auxiliary": {
+    "metric": {
+      "abs_pearson_corr": 0.23254348554400373,
+      "heldout_count": 320,
+      "pearson_corr": 0.23254348554400373
+    },
+    "passed": true,
+    "threshold": {
+      "pearson_corr_max": 0.5
+    }
+  },
+  "C2_no_anchor": {
+    "metric": {
+      "abs_pearson_corr": 0.23254348554400373,
+      "heldout_count": 320,
+      "pearson_corr": 0.23254348554400373
+    },
+    "passed": true,
+    "threshold": {
+      "pearson_corr_max": 0.5
+    }
+  },
+  "C3_random_world": {
+    "metric": {
+      "abs_pearson_corr": 0.005953949876847943,
+      "heldout_count": 320,
+      "pearson_corr": 0.005953949876847943
+    },
+    "passed": true,
+    "threshold": {
+      "pearson_corr_max": 0.3
+    }
+  },
+  "C4_auxiliary_leakage_audit": "see leakage_audit.json"
+}

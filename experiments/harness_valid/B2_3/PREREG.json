@@ -1,0 +1,454 @@
+{
+  "claim_scope": "B2.3 tests whether the finite-sample discrimination boundary shifts with n in the direction suggested by asymptotic consistency, not whether the theorem is confirmed. B2.3 does not estimate the dimension-accuracy boundary; it estimates the random-control discrimination boundary for the uniform hypercube family under the already-validated E_CAP+k-spread diagnostic.",
+  "created_at_utc": "2026-07-02T20:56:45.435986+00:00",
+  "crossover_definition": {
+    "d_star_integer": "smallest d where paired_separation(d,n) <= 0.5",
+    "interpolation": "linear interpolation between the adjacent d values bracketing 0.5, reported secondary only",
+    "monotonicity": "report observed table as-is; do not smooth to logistic or monotone curve",
+    "primary_crossover_metric": "paired_separation(d,n)=P(k_spread_random(n,s)-k_spread_geo(d,n,s)>epsilon)"
+  },
+  "dimension_accuracy_claim_allowed": false,
+  "final_grid_by_n": {
+    "1000": [
+      6,
+      8,
+      10,
+      12,
+      20,
+      40,
+      60,
+      80,
+      100,
+      120,
+      130,
+      140,
+      150,
+      160,
+      170,
+      180,
+      200
+    ],
+    "5000": [
+      6,
+      8,
+      10,
+      12,
+      20,
+      25,
+      30,
+      32,
+      34,
+      36,
+      38,
+      40,
+      42,
+      45,
+      50,
+      60,
+      80,
+      100
+    ]
+  },
+  "final_seed_policy": {
+    "adaptive_refinement_extra_seeds": [
+      240000,
+      240001,
+      240002,
+      240003,
+      240004,
+      240005,
+      240006,
+      240007,
+      240008,
+      240009,
+      240010,
+      240011,
+      240012,
+      240013,
+      240014,
+      240015,
+      240016,
+      240017,
+      240018,
+      240019,
+      240020,
+      240021,
+      240022,
+      240023,
+      240024,
+      240025,
+      240026,
+      240027,
+      240028,
+      240029
+    ],
+    "adaptive_refinement_rule": "After base sweep, for each n, find smallest d with paired_separation <= 0.5. If available compute allows, run N=50 for d* and adjacent integer d*\u00b11. If a neighbor was not in the base grid, add it as an adaptive cell.",
+    "base_N_per_cell": 20,
+    "base_seeds": [
+      230000,
+      230001,
+      230002,
+      230003,
+      230004,
+      230005,
+      230006,
+      230007,
+      230008,
+      230009,
+      230010,
+      230011,
+      230012,
+      230013,
+      230014,
+      230015,
+      230016,
+      230017,
+      230018,
+      230019
+    ]
+  },
+  "fixed_parameters": {
+    "epsilon": 0.5,
+    "k_sweep": [
+      10,
+      15,
+      20
+    ],
+    "primary_metric": "paired_separation"
+  },
+  "gate": "B2.3 \u2014 Discrimination Crossover Mapping",
+  "metric_scope_limitation": "For d values absent from PAPER_EXTRACTION Table 1, B2.3 does not claim literature tolerance on E_CAP value accuracy. It measures only random-control discrimination by k-spread.",
+  "not_tested_against": [
+    "small_world_graphs",
+    "scale_free_graphs",
+    "other_non_euclidean_structured_graphs"
+  ],
+  "random_control_mechanism": {
+    "b2_2_1_empirical_k_sweep_n1000": {
+      "10": 9.4,
+      "15": 11.5,
+      "20": 13.1
+    },
+    "empirical_match": true,
+    "formula": "For directed random k-out graph, B_SP(i,1)={i}+N_i. For edge i->j, B_SP(i,1)\u2229B_SP(j,1) always contains j. It equals 1 iff N_j avoids the k forbidden vertices {i}\u222a(N_i\\{j}), with exact probability prod_{r=0}^{k-1}(n-1-k-r)/(n-1-r). L_CAP uses the min over k out-edges, so P(min intersection=1)\u22481-(1-p)^k. Thus random k-out has L_CAP\u22481/(k+1), making E_CAP rise with k and producing large k-spread.",
+    "predictions": {
+      "1000": {
+        "10": {
+          "ecap_prediction_if_min_intersection_equals_1": 9.4,
+          "edge_expected_intersection": 1.1001001001001,
+          "edge_expected_l_cap_not_min": 0.1000091000091,
+          "l_cap_if_min_intersection_equals_1": 0.09090909090909091,
+          "p_edge_intersection_equals_1_exact": 0.9038762190926326,
+          "p_vertex_min_intersection_equals_1_independence_approx": 0.9999999999326545
+        },
+        "15": {
+          "ecap_prediction_if_min_intersection_equals_1": 11.5,
+          "edge_expected_intersection": 1.2252252252252251,
+          "edge_expected_l_cap_not_min": 0.07657657657657657,
+          "l_cap_if_min_intersection_equals_1": 0.0625,
+          "p_edge_intersection_equals_1_exact": 0.7956855325472049,
+          "p_vertex_min_intersection_equals_1_independence_approx": 0.9999999999548678
+        },
+        "20": {
+          "ecap_prediction_if_min_intersection_equals_1": 13.1,
+          "edge_expected_intersection": 1.4004004004004005,
+          "edge_expected_l_cap_not_min": 0.06668573335240002,
+          "l_cap_if_min_intersection_equals_1": 0.047619047619047616,
+          "p_edge_intersection_equals_1_exact": 0.6647129645928556,
+          "p_vertex_min_intersection_equals_1_independence_approx": 0.9999999996776444
+        }
+      },
+      "5000": {
+        "10": {
+          "ecap_prediction_if_min_intersection_equals_1": 9.4,
+          "edge_expected_intersection": 1.02000400080016,
+          "edge_expected_l_cap_not_min": 0.09272763643637819,
+          "l_cap_if_min_intersection_equals_1": 0.09090909090909091,
+          "p_edge_intersection_equals_1_exact": 0.9801574061094752,
+          "p_vertex_min_intersection_equals_1_independence_approx": 1.0
+        },
+        "15": {
+          "ecap_prediction_if_min_intersection_equals_1": 11.5,
+          "edge_expected_intersection": 1.0450090018003602,
+          "edge_expected_l_cap_not_min": 0.06531306261252251,
+          "l_cap_if_min_intersection_equals_1": 0.0625,
+          "p_edge_intersection_equals_1_exact": 0.9558636498570678,
+          "p_vertex_min_intersection_equals_1_independence_approx": 1.0
+        },
+        "20": {
+          "ecap_prediction_if_min_intersection_equals_1": 13.1,
+          "edge_expected_intersection": 1.08001600320064,
+          "edge_expected_l_cap_not_min": 0.051429333485744765,
+          "l_cap_if_min_intersection_equals_1": 0.047619047619047616,
+          "p_edge_intersection_equals_1_exact": 0.922812168707698,
+          "p_vertex_min_intersection_equals_1_independence_approx": 1.0
+        }
+      }
+    },
+    "random_control_mechanism_derived": true
+  },
+  "sanity_results": {
+    "extended_n1000_probe": [
+      {
+        "d": 20,
+        "geo_per_k_ecap": {
+          "10": 7.8,
+          "15": 9.2,
+          "20": 9.7
+        },
+        "k_spread_geo": 1.8999999999999995,
+        "k_spread_random": 3.6999999999999993,
+        "margin_random_minus_geo": 1.7999999999999998,
+        "n": 1000,
+        "seed": 88008800
+      },
+      {
+        "d": 40,
+        "geo_per_k_ecap": {
+          "10": 8.5,
+          "15": 10.2,
+          "20": 11.1
+        },
+        "k_spread_geo": 2.5999999999999996,
+        "k_spread_random": 3.6999999999999993,
+        "margin_random_minus_geo": 1.0999999999999996,
+        "n": 1000,
+        "seed": 88008800
+      },
+      {
+        "d": 60,
+        "geo_per_k_ecap": {
+          "10": 8.7,
+          "15": 10.4,
+          "20": 11.2
+        },
+        "k_spread_geo": 2.5,
+        "k_spread_random": 3.6999999999999993,
+        "margin_random_minus_geo": 1.1999999999999993,
+        "n": 1000,
+        "seed": 88008800
+      },
+      {
+        "d": 80,
+        "geo_per_k_ecap": {
+          "10": 8.7,
+          "15": 10.6,
+          "20": 11.7
+        },
+        "k_spread_geo": 3.0,
+        "k_spread_random": 3.6999999999999993,
+        "margin_random_minus_geo": 0.6999999999999993,
+        "n": 1000,
+        "seed": 88008800
+      },
+      {
+        "d": 100,
+        "geo_per_k_ecap": {
+          "10": 8.9,
+          "15": 10.8,
+          "20": 12.0
+        },
+        "k_spread_geo": 3.0999999999999996,
+        "k_spread_random": 3.6999999999999993,
+        "margin_random_minus_geo": 0.5999999999999996,
+        "n": 1000,
+        "seed": 88008800
+      },
+      {
+        "d": 150,
+        "geo_per_k_ecap": {
+          "10": 8.8,
+          "15": 10.8,
+          "20": 12.1
+        },
+        "k_spread_geo": 3.299999999999999,
+        "k_spread_random": 3.6999999999999993,
+        "margin_random_minus_geo": 0.40000000000000036,
+        "n": 1000,
+        "seed": 88008800
+      },
+      {
+        "d": 200,
+        "geo_per_k_ecap": {
+          "10": 8.9,
+          "15": 10.9,
+          "20": 12.1
+        },
+        "k_spread_geo": 3.1999999999999993,
+        "k_spread_random": 3.6999999999999993,
+        "margin_random_minus_geo": 0.5,
+        "n": 1000,
+        "seed": 88008800
+      }
+    ],
+    "grid_justification": "Required d={6,8,10,12} sanity points did not bracket crossover at n=1000; all margins exceeded epsilon. Extended sanity probes showed loss of paired margin around high d for n=1000 and around d\u224840 for n=5000, so final grids were widened while keeping the same uniform-hypercube family.",
+    "initial_required_d_sweep_n1000": [
+      {
+        "d": 6,
+        "geo_per_k_ecap": {
+          "10": 4.7,
+          "15": 5.2,
+          "20": 5.5
+        },
+        "k_spread_geo": 0.7999999999999998,
+        "k_spread_random": 3.6999999999999993,
+        "margin_random_minus_geo": 2.8999999999999995,
+        "n": 1000,
+        "random_per_k_ecap": {
+          "10": 9.4,
+          "15": 11.5,
+          "20": 13.1
+        },
+        "seed": 88008800
+      },
+      {
+        "d": 8,
+        "geo_per_k_ecap": {
+          "10": 5.7,
+          "15": 6.4,
+          "20": 6.7
+        },
+        "k_spread_geo": 1.0,
+        "k_spread_random": 3.6999999999999993,
+        "margin_random_minus_geo": 2.6999999999999993,
+        "n": 1000,
+        "random_per_k_ecap": {
+          "10": 9.4,
+          "15": 11.5,
+          "20": 13.1
+        },
+        "seed": 88008800
+      },
+      {
+        "d": 10,
+        "geo_per_k_ecap": {
+          "10": 6.3,
+          "15": 7.1,
+          "20": 7.5
+        },
+        "k_spread_geo": 1.2000000000000002,
+        "k_spread_random": 3.6999999999999993,
+        "margin_random_minus_geo": 2.499999999999999,
+        "n": 1000,
+        "random_per_k_ecap": {
+          "10": 9.4,
+          "15": 11.5,
+          "20": 13.1
+        },
+        "seed": 88008800
+      },
+      {
+        "d": 12,
+        "geo_per_k_ecap": {
+          "10": 6.8,
+          "15": 7.8,
+          "20": 8.3
+        },
+        "k_spread_geo": 1.5000000000000009,
+        "k_spread_random": 3.6999999999999993,
+        "margin_random_minus_geo": 2.1999999999999984,
+        "n": 1000,
+        "random_per_k_ecap": {
+          "10": 9.4,
+          "15": 11.5,
+          "20": 13.1
+        },
+        "seed": 88008800
+      }
+    ],
+    "n5000_probe": [
+      {
+        "d": 12,
+        "geo_per_k_ecap": {
+          "10": 7.2,
+          "15": 8.6,
+          "20": 9.3
+        },
+        "k_spread_geo": 2.1000000000000005,
+        "k_spread_random": 3.6999999999999993,
+        "margin_random_minus_geo": 1.5999999999999988,
+        "n": 5000,
+        "seed": 88008800
+      },
+      {
+        "d": 20,
+        "geo_per_k_ecap": {
+          "10": 8.3,
+          "15": 10.2,
+          "20": 11.2
+        },
+        "k_spread_geo": 2.8999999999999986,
+        "k_spread_random": 3.6999999999999993,
+        "margin_random_minus_geo": 0.8000000000000007,
+        "n": 5000,
+        "seed": 88008800
+      },
+      {
+        "d": 40,
+        "geo_per_k_ecap": {
+          "10": 8.9,
+          "15": 11.0,
+          "20": 12.5
+        },
+        "k_spread_geo": 3.5999999999999996,
+        "k_spread_random": 3.6999999999999993,
+        "margin_random_minus_geo": 0.09999999999999964,
+        "n": 5000,
+        "seed": 88008800
+      },
+      {
+        "d": 60,
+        "geo_per_k_ecap": {
+          "10": 9.0,
+          "15": 11.2,
+          "20": 12.7
+        },
+        "k_spread_geo": 3.6999999999999993,
+        "k_spread_random": 3.6999999999999993,
+        "margin_random_minus_geo": 0.0,
+        "n": 5000,
+        "seed": 88008800
+      },
+      {
+        "d": 80,
+        "geo_per_k_ecap": {
+          "10": 9.1,
+          "15": 11.2,
+          "20": 12.8
+        },
+        "k_spread_geo": 3.700000000000001,
+        "k_spread_random": 3.6999999999999993,
+        "margin_random_minus_geo": -1.7763568394002505e-15,
+        "n": 5000,
+        "seed": 88008800
+      },
+      {
+        "d": 100,
+        "geo_per_k_ecap": {
+          "10": 9.1,
+          "15": 11.3,
+          "20": 12.8
+        },
+        "k_spread_geo": 3.700000000000001,
+        "k_spread_random": 3.6999999999999993,
+        "margin_random_minus_geo": -1.7763568394002505e-15,
+        "n": 5000,
+        "seed": 88008800
+      }
+    ],
+    "sanity_seed": 88008800
+  },
+  "step0_summary": {
+    "leakage_scanner_estimator_facing_only_confirmed": true,
+    "random_control_final_kspread": 3.6999999999999993,
+    "random_control_kspread_final_recomputed": true
+  },
+  "tautology_check_scope": "preregistered_random_k_out_control_only",
+  "tautology_warning": "This result rejects tautology only with respect to the preregistered random k-out graph control. It does not establish that the estimator cannot be fooled by other non-geometric graph families.",
+  "varying_parameters": [
+    "d",
+    "n"
+  ],
+  "world_family": "uniform hypercube, same family as B2.2/B2.2.1 high-d cube world",
+  "written_before_final_sweep": true
+}

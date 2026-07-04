@@ -1,0 +1,32 @@
+{
+  "controls": {
+    "C1_shuffled_auxiliary": {
+      "passed": true,
+      "relation_f1": 0.29776635063474205
+    },
+    "C2_no_anchors": {
+      "passed": true,
+      "relation_f1": 0.5286042111196103
+    },
+    "C3_disconnected_anchors": {
+      "passed": true,
+      "relation_f1": 0.5858511692793421
+    },
+    "C4_random_relation": {
+      "passed": true,
+      "relation_f1": 0.2283528457169352
+    },
+    "C5_chain_control": {
+      "passed": true,
+      "relation_f1": 0.9991325664718084
+    },
+    "C6_three_d_control": {
+      "passed": true,
+      "relation_f1": 0.6394600533668184
+    },
+    "C7_leakage_audit": "see leakage_audit.json",
+    "C8_static_audit": "see static_audit.json"
+  },
+  "passed": true,
+  "sparse_anchor_relation_f1": 0.997096217234343
+}

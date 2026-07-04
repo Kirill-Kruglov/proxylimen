@@ -1,0 +1,14 @@
+{
+  "gate": "B1_harness_rerun",
+  "threshold_change_rationale": {},
+  "thresholds": {
+    "improvement_min": 0.6,
+    "information_ratio_min": 0.5,
+    "no_anchor_with_aux_corr_max": 0.5,
+    "no_aux_abs_corr_max": 0.3,
+    "random_world_corr_max": 0.3,
+    "seed_count_min": 20,
+    "shuffled_aux_corr_max": 0.5,
+    "with_aux_corr_min": 0.9
+  }
+}

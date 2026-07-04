@@ -1,0 +1,25 @@
+{
+  "admissible_for_next_gate": true,
+  "affine_bias_robustness_passed": true,
+  "aux_leakage_detected": false,
+  "b1_decision_confirmed": true,
+  "controls_passed": true,
+  "decision": "B1.1-PASS-ROBUST-AUXILIARY-CALIBRATION-SIGNAL",
+  "derivability_claim_allowed": false,
+  "general_disentanglement_claim_allowed": false,
+  "human_authored_outcomes_detected": false,
+  "llm_training_allowed": false,
+  "multiseed_robustness_passed": true,
+  "next_allowed_work": [
+    "B1.1 postmortem",
+    "B2 relational order-dimension gate spec"
+  ],
+  "no_aux_baseline_robustness_passed": true,
+  "real_world_transfer_claim_allowed": false,
+  "reason": "The auxiliary calibration signal survived multiseed, sparse-anchor, affine, no-auxiliary baseline, control, and leakage checks.",
+  "repeats_s4_accounting": false,
+  "s4_1_decision_confirmed": true,
+  "semantic_boundary_generator_claim_allowed": false,
+  "sparse_anchor_robustness_passed": true,
+  "substrate_claim_allowed": false
+}

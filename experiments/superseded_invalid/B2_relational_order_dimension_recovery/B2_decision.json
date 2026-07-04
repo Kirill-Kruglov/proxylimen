@@ -1,0 +1,29 @@
+{
+  "admissible_for_next_gate": true,
+  "aux_leakage_detected": false,
+  "b1_1_decision_confirmed": true,
+  "controls_passed": true,
+  "dataset_generated": true,
+  "decision": "B2-PASS-RELATIONAL-ORDER-DIMENSION-SIGNAL",
+  "derivability_claim_allowed": false,
+  "general_disentanglement_claim_allowed": false,
+  "general_order_dimension_claim_allowed": false,
+  "human_authored_outcomes_detected": false,
+  "llm_training_allowed": false,
+  "next_allowed_work": [
+    "B2 postmortem",
+    "B3 relational robustness / adversarial controls spec"
+  ],
+  "no_aux_recovery_failed": true,
+  "real_world_transfer_claim_allowed": false,
+  "reason": "Auxiliary calibration recovered the generated 2D product-order relation while no-auxiliary and broken-calibration controls failed.",
+  "relation_improvement_passed": true,
+  "relation_label_leakage_detected": false,
+  "repeats_s4_accounting": false,
+  "s4_1_decision_confirmed": true,
+  "semantic_boundary_generator_claim_allowed": false,
+  "static_audit_passed": true,
+  "substrate_claim_allowed": false,
+  "toy_order_dimension_proxy_passed": true,
+  "with_aux_relation_recovery_succeeded": true
+}

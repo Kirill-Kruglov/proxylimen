@@ -1,0 +1,51 @@
+{
+  "task": "B1.1 Auxiliary-Calibration Robustness / Leakage Hardening Gate",
+  "seed_start": 20260702,
+  "seed_count": 24,
+  "implementation": "Python 3 standard library only",
+  "suites": {
+    "R1_multiseed_additive": {
+      "mean_no_aux_abs_corr_max": 0.35,
+      "mean_with_aux_corr_min": 0.9,
+      "mean_improvement_min": 0.55,
+      "individual_seed_requirement_fraction": 0.8,
+      "individual_no_aux_abs_corr_max": 0.4,
+      "individual_with_aux_corr_min": 0.85
+    },
+    "R2_sparse_connected_anchor": {
+      "sparse_anchor_with_aux_corr_min": 0.85,
+      "sparse_anchor_improvement_min": 0.5,
+      "disconnected_anchor_corr_max": 0.5
+    },
+    "R3_affine_observer_coloring": {
+      "affine_with_aux_corr_min": 0.85,
+      "affine_no_aux_abs_corr_max": 0.45,
+      "affine_improvement_min": 0.4,
+      "affine_shuffled_aux_corr_max": 0.55
+    },
+    "R4_stronger_no_auxiliary_baselines": {
+      "baselines": [
+        "NO_AUX_RAW_RANK",
+        "NO_AUX_GLOBAL_STANDARDIZE",
+        "NO_AUX_QUANTILE_SEGMENT"
+      ],
+      "max_no_aux_abs_corr_max": 0.5
+    }
+  },
+  "controls": {
+    "C1_shuffled_auxiliary_corr_max": 0.5,
+    "C2_no_anchor_corr_max": 0.5,
+    "C3_disconnected_anchor_corr_max": 0.5,
+    "C4_random_world_corr_max": 0.3,
+    "C5_leakage_audit_required": true
+  },
+  "forbidden_claims": [
+    "LLM training",
+    "substrate discovery",
+    "derivability",
+    "semantic boundary generation",
+    "real-world transfer",
+    "general disentanglement"
+  ]
+}
+
