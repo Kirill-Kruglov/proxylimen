@@ -1,37 +1,66 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Blind Dimension Demo</title>
 <style>
   :root{
+    --blue:#76a7ff; --cyan:#64d3c0; --amber:#e2b45c; --bad:#e06c75; --ok:#88c07d;
+    --bg:#fbfaf6; --panel:#ffffff; --panel2:#f2efe6; --line:#e4e0d6;
+    --text:#1d1c1a; --muted:#6b6760; --soft:#8a857c;
+    --num:#127c6a; --statusink:#8a5a12; --badgeink:#b8b3aa;
+  }
+  :root[data-theme=dark]{
     --bg:#111315; --panel:#191c1f; --panel2:#202428; --line:#30363d;
     --text:#e7e2d8; --muted:#a9a49b; --soft:#77736d;
-    --blue:#76a7ff; --cyan:#64d3c0; --amber:#e2b45c; --bad:#e06c75; --ok:#88c07d;
+    --num:#64d3c0; --statusink:#e2b45c;
   }
+  @media(prefers-color-scheme:dark){:root:not([data-theme]){
+    --bg:#111315; --panel:#191c1f; --panel2:#202428; --line:#30363d;
+    --text:#e7e2d8; --muted:#a9a49b; --soft:#77736d;
+    --num:#64d3c0; --statusink:#e2b45c;
+  }}
+  .sitenav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px clamp(16px,5vw,40px);background:var(--bg);border-bottom:1px solid var(--line);font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:15px}
+  .sitenav .brand{font-weight:700;letter-spacing:.02em;color:var(--text);text-decoration:none}
+  .sitenav .right{display:flex;align-items:center;gap:18px}
+  .sitenav a{color:var(--muted);text-decoration:none}
+  .sitenav a:hover{color:var(--text)}
+  .sitenav button{background:none;border:1px solid var(--line);color:var(--muted);border-radius:999px;width:34px;height:34px;cursor:pointer;font-size:15px;line-height:1}
+  .sitenav button:hover{color:var(--text)}
   *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
   body{min-height:100vh} button,input{font:inherit} canvas{display:block;width:100%;height:100%}
   .app{max-width:1480px;margin:0 auto;padding:18px;display:grid;gap:14px}
   header{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start;border-bottom:1px solid var(--line);padding-bottom:12px}
-  h1{margin:0;font-size:clamp(22px,3vw,38px);letter-spacing:0;color:#f2ece2;font-weight:720}
-  .subtitle{color:var(--muted);max-width:920px;margin-top:5px}.lang{display:flex;gap:6px}.lang button,.ghost{background:#22272d;color:var(--text);border:1px solid var(--line);border-radius:7px;padding:8px 10px;cursor:pointer}.lang button.active{background:var(--blue);color:#07101d;border-color:transparent}
+  h1{margin:0;font-size:clamp(22px,3vw,38px);letter-spacing:0;color:var(--text);font-weight:720}
+  .subtitle{color:var(--muted);max-width:920px;margin-top:5px}.lang{display:flex;gap:6px}.lang button,.ghost{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:7px;padding:8px 10px;cursor:pointer}.lang button.active{background:var(--blue);color:#07101d;border-color:transparent}
   .controls{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px}
   .control{display:grid;gap:6px}.control label{display:flex;justify-content:space-between;color:var(--muted)} input[type=range]{width:100%;accent-color:var(--blue)}
-  .primary{background:var(--blue);color:#07101d;border:0;border-radius:7px;padding:10px 12px;cursor:pointer;font-weight:700}.secondary{background:#242a30;color:var(--text);border:1px solid var(--line);border-radius:7px;padding:10px 12px;cursor:pointer}.danger{background:#3a2327;color:#ffdce0;border:1px solid #6d333d;border-radius:7px;padding:10px 12px;cursor:pointer}
-  .story{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.step{background:#171a1d;border:1px solid var(--line);border-radius:8px;padding:10px;color:var(--muted);cursor:pointer;min-height:72px}.step b{color:var(--text)}.step:hover{border-color:#59616b;background:#1e2328}
-  .panels{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;min-height:520px;display:grid;grid-template-rows:auto 1fr auto;overflow:hidden}.panel h2{margin:0;padding:12px 13px 4px;font-size:16px}.panel p{margin:0;padding:0 13px 10px;color:var(--muted)}.canvasWrap{position:relative;min-height:360px;background:linear-gradient(180deg,#15181b,#111315)}.badge{position:absolute;left:10px;top:10px;background:rgba(20,23,26,.78);border:1px solid var(--line);border-radius:7px;padding:6px 8px;color:var(--muted);backdrop-filter:blur(3px)}.panelFoot{border-top:1px solid var(--line);padding:10px 12px;color:var(--muted);min-height:54px}
-  .estimateBox{display:grid;gap:12px;padding:12px}.estimateNumber{font-size:clamp(34px,6vw,64px);font-weight:780;color:var(--cyan);letter-spacing:0}.truth{font-size:18px;color:var(--muted)}.resultGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px}.metric .v{font-size:24px;color:var(--text);font-weight:700}.notice{border-radius:8px;border:1px solid var(--line);padding:10px;background:#171a1d}.notice.ok{border-color:#456b44;background:#18231a;color:#dff2dc}.notice.bad{border-color:#734049;background:#28191d;color:#ffd9de}.sweepRows{display:grid;gap:5px;color:var(--muted)}.bar{height:7px;background:#262c32;border-radius:99px;overflow:hidden}.bar span{display:block;height:100%;background:var(--amber);width:0%}
+  .primary{background:var(--blue);color:#07101d;border:0;border-radius:7px;padding:10px 12px;cursor:pointer;font-weight:700}.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:7px;padding:10px 12px;cursor:pointer}.danger{background:#3a2327;color:#ffdce0;border:1px solid #6d333d;border-radius:7px;padding:10px 12px;cursor:pointer}
+  .story{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.step{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px;color:var(--muted);cursor:pointer;min-height:72px}.step b{color:var(--text)}.step:hover{border-color:var(--muted);background:var(--line)}
+  .panels{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;min-height:520px;display:grid;grid-template-rows:auto 1fr auto;overflow:hidden}.panel h2{margin:0;padding:12px 13px 4px;font-size:16px}.panel p{margin:0;padding:0 13px 10px;color:var(--muted)}.canvasWrap{position:relative;min-height:360px;background:linear-gradient(180deg,#15181b,#111315)}.badge{position:absolute;left:10px;top:10px;background:rgba(20,23,26,.78);border:1px solid var(--line);border-radius:7px;padding:6px 8px;color:var(--badgeink);backdrop-filter:blur(3px)}.panelFoot{border-top:1px solid var(--line);padding:10px 12px;color:var(--muted);min-height:54px}
+  .estimateBox{display:grid;gap:12px;padding:12px}.estimateNumber{font-size:clamp(34px,6vw,64px);font-weight:780;color:var(--num);letter-spacing:0}.truth{font-size:18px;color:var(--muted)}.resultGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:10px}.metric .v{font-size:24px;color:var(--text);font-weight:700}.notice{border-radius:8px;border:1px solid var(--line);padding:10px;background:var(--panel2)}.notice.ok{border-color:#456b44;background:#18231a;color:#dff2dc}.notice.bad{border-color:#734049;background:#28191d;color:#ffd9de}.sweepRows{display:grid;gap:5px;color:var(--muted)}.bar{height:7px;background:var(--line);border-radius:99px;overflow:hidden}.bar span{display:block;height:100%;background:var(--amber);width:0%}
   .chartPanel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px;display:grid;grid-template-columns:360px 1fr;gap:12px;align-items:center}.chartWrap{height:190px}.chartText{color:var(--muted)}.chartText b{color:var(--text)}
-  .status{color:var(--amber);min-height:20px}.tiny{font-size:12px;color:var(--soft)}
+  .status{color:var(--statusink);min-height:20px}.tiny{font-size:12px;color:var(--soft)}
   @media(max-width:1050px){.panels{grid-template-columns:1fr}.panel{min-height:430px}.controls{grid-template-columns:1fr 1fr}.story{grid-template-columns:1fr}.chartPanel{grid-template-columns:1fr}.chartWrap{height:210px}} @media(max-width:620px){.app{padding:10px}.controls{grid-template-columns:1fr}header{grid-template-columns:1fr}.panel{min-height:390px}.resultGrid{grid-template-columns:1fr}.estimateNumber{font-size:38px}}
 </style>
+<script>try{var t=localStorage.getItem("proxylimen-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
 </head>
 <body>
+<nav class="sitenav">
+  <a class="brand" href="../">proxylimen</a>
+  <div class="right">
+    <a href="../">Essay</a>
+    <a href="./">Demo</a>
+    <a href="../about.html">About</a>
+    <a href="https://github.com/Kirill-Kruglov/proxylimen">GitHub</a>
+    <button id="theme" type="button" aria-label="Toggle light / dark">&#9682;</button>
+  </div>
+</nav>
 <div class="app">
   <header>
     <div><h1 data-i="title">Угадай размерность вслепую</h1><div class="subtitle" data-i="subtitle">Мир имеет скрытую геометрию. Машина получает только kNN-граф: кто чей сосед. Можно ли вывести размерность без координат?</div></div>
-    <div class="lang"><button id="ruBtn" class="active">RU</button><button id="enBtn">EN</button></div>
+    <div class="lang"><button id="ruBtn">RU</button><button id="enBtn" class="active">EN</button></div>
   </header>
 
   <section class="controls">
@@ -60,7 +89,7 @@
 <script>
 'use strict';
 const I18N={ru:{title:'Угадай размерность вслепую',subtitle:'Мир имеет скрытую геометрию. Машина получает только kNN-граф: кто чей сосед. Можно ли вывести размерность без координат?',nLabel:'точек n',dLabel:'размерность d',regen:'Сгенерировать мир',randomize:'Подменить на случайный граф',step1:'d=3, n=1000 → оценка около 3: работает.',step2:'d=25, n=1000 → высокая размерность ломает оценку.',step3:'Случайный граф → выглядит как честная размерность.',step4:'k-sweep ловит подделку: spread большой.',step5:'Граница: где отношения перестают надёжно выводить структуру.',p1:'1. Мир',p1sub:'Скрытая истина: точки в d-мерном кубе. Ты видишь только 2D-проекцию; машина не видит даже этого.',p2:'2. Что видит машина',p2sub:'Только kNN-граф при k=15: ни координат, ни расстояний — только кто чей сосед.',p3:'3. Слепая оценка',p3sub:'E_CAP по Kleindessner & von Luxburg: пересечение шаров радиуса 1 в графе, затем инверсия S(d).',estimate:'Оценить размерность',sweep:'Проверить на артефакт',truthHidden:'Истина скрыта до оценки',lcap:'L_CAP',spread:'k-spread',noticeIdle:'Нажми «Оценить размерность», затем «Проверить на артефакт».',formula:'L_CAP(i)=min_j |B(i,1)∩B(j,1)|/(k+1). Оценка — только из графа.',chartTitle:'B2.3: граница дискриминации',chartText:'paired separation падает ниже 0.5 при d*=130 для n=1000 и d*=24 для n=5000. Больше данных ≠ дальше граница.',chartNote:'Данные захардкожены из B2.3 crossover table; это пояснение, не новый эксперимент.',projectionFoot:'2D-проекция. Машина не получает координат.',graphFoot:'узлов показано; E_CAP считает полный граф.',randomEstimateHint:'Похоже на геометрию, пока k-sweep не проверит.',blindComputed:'Слепая оценка посчитана только из графа.',geom:'геометрия',rand:'случайный k-out граф',sample:'показан сэмпл',truth:'Истина',estimating:'считаю...',artifactBad:'НЕ ГЕОМЕТРИЯ: оценка — артефакт k',artifactOk:'структура реальна',final:'Так мы измерили границу, где выведение структуры из чистых отношений перестаёт быть возможным. Подробности — в эссе.'},en:{title:'Guess the dimension blind',subtitle:'The world has hidden geometry. The machine receives only a kNN graph: who is whose neighbor. Can dimension be inferred without coordinates?',nLabel:'points n',dLabel:'dimension d',regen:'Generate world',randomize:'Swap to random graph',step1:'d=3, n=1000 → estimate near 3: it works.',step2:'d=25, n=1000 → high dimension breaks the estimate.',step3:'Random graph → it looks like an honest dimension.',step4:'k-sweep catches the fake: spread is large.',step5:'Boundary: where relations stop reliably deriving structure.',p1:'1. World',p1sub:'Hidden truth: points in a d-dimensional cube. You see a 2D projection; the machine does not even see this.',p2:'2. What the machine sees',p2sub:'Only the kNN graph at k=15: no coordinates, no distances — only neighbor links.',p3:'3. Blind estimate',p3sub:'E_CAP after Kleindessner & von Luxburg: radius-1 graph-ball intersections, then invert S(d).',estimate:'Estimate dimension',sweep:'Check artifact',truthHidden:'Truth hidden until estimate',lcap:'L_CAP',spread:'k-spread',noticeIdle:'Press “Estimate dimension”, then “Check artifact”.',formula:'L_CAP(i)=min_j |B(i,1)∩B(j,1)|/(k+1). Estimate uses only the graph.',chartTitle:'B2.3: discrimination boundary',chartText:'paired separation drops below 0.5 at d*=130 for n=1000 and d*=24 for n=5000. More data ≠ farther boundary.',chartNote:'Data hard-coded from the B2.3 crossover table; explanatory only, not a new experiment.',projectionFoot:'2D projection only. Machine receives no coordinates.',graphFoot:'nodes drawn; E_CAP uses full graph.',randomEstimateHint:'Looks geometric until k-sweep checks it.',blindComputed:'Blind estimate computed from graph only.',geom:'geometry',rand:'random k-out graph',sample:'sample shown',truth:'Truth',estimating:'working...',artifactBad:'NOT GEOMETRY: estimate is a k artifact',artifactOk:'structure is real',final:'This is how we measured the boundary where deriving structure from pure relations stops being reliable. Details in the essay.'}};
-let lang='ru'; const $=id=>document.getElementById(id);
+let lang='en'; const $=id=>document.getElementById(id);
 let state={n:1000,d:3,k:15,mode:'geom',seed:12345,points:null,adj:null,layout:null,estimated:false,last:null,sTable:null};
 function t(k){return I18N[lang][k]||k} function setLang(l){lang=l; document.documentElement.lang=l; $('ruBtn').classList.toggle('active',l==='ru'); $('enBtn').classList.toggle('active',l==='en'); document.querySelectorAll('[data-i]').forEach(el=>{el.textContent=t(el.dataset.i)}); renderAll(); updateText();}
 function mulberry32(a){return function(){let t=a+=0x6D2B79F5;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return ((t^t>>>14)>>>0)/4294967296}}
@@ -86,7 +115,8 @@ async function estimate(){setControls(true);status(t('estimating'));await new Pr
 async function sweep(){setControls(true);status(t('estimating'));await new Promise(r=>setTimeout(r,20));let vals=[]; if(state.mode==='geom'){const adj20=buildKNN(state.points,state.n,state.d,20); for(const k of [10,15,20]) vals.push({k,...ecap(adj20.map(row=>row.slice(0,k)),k)})} else {for(const k of [10,15,20]) vals.push({k,...ecap(randomGraph(state.n,k,state.seed),k)})} const dims=vals.map(v=>v.dim), spread=Math.max(...dims)-Math.min(...dims);$('spreadOut').textContent=spread.toFixed(2);$('sweepRows').innerHTML=vals.map(v=>`<div>k=${v.k}: d≈${v.dim.toFixed(1)}<div class="bar"><span style="width:${Math.min(100,v.dim/20*100)}%"></span></div></div>`).join('');const bad=spread>2.5;$('notice').className='notice '+(bad?'bad':'ok');$('notice').textContent=bad?t('artifactBad'):t('artifactOk'); if(state.mode==='rand'&&bad){$('worldFoot').textContent=t('final')}status('');setControls(false)}
 function preset(kind){if(kind==='3'){nSlider.value=1000;dSlider.value=3;build('geom')} if(kind==='25'){nSlider.value=1000;dSlider.value=25;build('geom')} if(kind==='random'){nSlider.value=1000;dSlider.value=25;build('rand')} if(kind==='b23'){nSlider.value=1000;dSlider.value=40;build('geom')}}
 $('ruBtn').onclick=()=>setLang('ru');$('enBtn').onclick=()=>setLang('en');$('nSlider').oninput=e=>{state.n=+e.target.value;$('nVal').textContent=state.n};$('dSlider').oninput=e=>{state.d=+e.target.value;$('dVal').textContent=state.d};$('regenBtn').onclick=()=>build('geom');$('randomBtn').onclick=()=>build('rand');$('estimateBtn').onclick=estimate;$('sweepBtn').onclick=sweep;document.querySelectorAll('.step').forEach(b=>{b.onclick=()=>{if(b.dataset.action==='sweep')sweep();else preset(b.dataset.preset)}});window.addEventListener('resize',renderAll);
-state.sTable=makeSTable();setLang('ru');build('geom');
+state.sTable=makeSTable();setLang('en');build('geom');
 </script>
+<script>(function(){var root=document.documentElement,KEY="proxylimen-theme";var b=document.getElementById("theme");if(b)b.addEventListener("click",function(){var cur=root.getAttribute("data-theme");if(!cur)cur=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";var next=cur==="dark"?"light":"dark";root.setAttribute("data-theme",next);localStorage.setItem(KEY,next);});})();</script>
 </body>
 </html>
