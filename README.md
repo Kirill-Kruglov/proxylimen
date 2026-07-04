@@ -1,8 +1,15 @@
 # proxylimen
 
+[![CI](https://github.com/Kirill-Kruglov/proxylimen/actions/workflows/ci.yml/badge.svg)](https://github.com/Kirill-Kruglov/proxylimen/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 *Proxy* + *limen*: a proxy at the threshold.
+
+**[📖 Read the essay](https://kirill-kruglov.github.io/proxylimen/)**
+([md](essay/everything-from-almost-nothing.md) ·
+[PDF](essay/everything-from-almost-nothing.pdf)) ·
+**[▶ Try the demo](https://kirill-kruglov.github.io/proxylimen/demo/)** ·
+**[See the evidence](canonical/RESULTS_CANONICAL.md)**
 
 The internet is a proxy of a proxy: text left behind by other people's models of
 the world, not the world itself. `proxylimen` asks where a learner can still
@@ -129,18 +136,21 @@ find experiments/superseded_invalid -name '*decision*.json' -print0 \
 
 Expected: each prints `INVALID` with the missing `_harness_provenance` reason.
 
-The harness has pytest-style tests under [`gate_harness/tests/`](gate_harness/tests/):
+Run the harness self-checks and reproduce the citability split (Python 3.11+; the
+only runtime dependency is numpy):
 
 ```bash
-PYTHONPATH=. python3 -m pytest gate_harness/tests -q
+pip install -e ".[dev]"        # numpy + pytest
+pytest -q                      # 18 harness self-checks
+python scripts/verify_all.py   # 5 VALID, superseded INVALID; non-zero on mismatch
 ```
 
-If `pytest` is unavailable, the verifier and modules can still be import-checked
-with standard Python.
+CI runs exactly this on every push.
 
 ## Demo
 
-Open [`demo/blind_dimension.html`](demo/blind_dimension.html) locally in a browser.
+[**Try it in the browser**](https://kirill-kruglov.github.io/proxylimen/demo/), or
+open [`demo/blind_dimension.html`](demo/blind_dimension.html) locally.
 It is a single offline HTML file: no build step, no CDN, no external data. The demo
 lets a reader generate a hidden high-dimensional cube, give the machine only the
 kNN graph, estimate dimension blindly, then swap the world for a random k-out
