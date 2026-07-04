@@ -1,0 +1,12 @@
+[project]
+name = "proxylimen"
+version = "0.1.0"
+description = "Deriving world-structure from minimal contact: tiny worlds, a self-checking gate harness, and the walls where blind derivation breaks"
+requires-python = ">=3.11"
+dependencies = ["numpy"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.pytest.ini_options]
+testpaths = ["gate_harness/tests"]
