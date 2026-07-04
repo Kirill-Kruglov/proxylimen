@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Everything From Almost Nothing</title>
+<meta name="description" content="Can a world be derived without an oracle? Tiny worlds, an instrument built to catch the author cheating, and a precise map of when knowledge can be derived rather than inherited — one step earlier than Machines of Loving Grace.">
+<meta property="og:title" content="Everything From Almost Nothing">
+<meta property="og:description" content="Can a world be derived without an oracle? Tiny worlds, an instrument built to catch the author cheating, and a precise map of when knowledge can be derived rather than inherited — one step earlier than Machines of Loving Grace.">
+<meta property="og:type" content="article">
+<style>
+:root{--bg:#fbfaf6;--ink:#1d1c1a;--muted:#6b6760;--line:#e4e0d6;--accent:#7a5b2e;--rule:#ece8de;--tablehead:#f3f0e8}
+:root[data-theme=dark]{--bg:#15171c;--ink:#dfdcd4;--muted:#9a958c;--line:#2a2d34;--accent:#cdb079;--rule:#23262d;--tablehead:#1c1f25}
+@media (prefers-color-scheme:dark){:root:not([data-theme]){--bg:#15171c;--ink:#dfdcd4;--muted:#9a958c;--line:#2a2d34;--accent:#cdb079;--rule:#23262d;--tablehead:#1c1f25}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:20px/1.7 Iowan Old Style,Palatino,Georgia,"Times New Roman",serif;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;
+  gap:16px;padding:12px clamp(16px,5vw,40px);background:var(--bg);border-bottom:1px solid var(--line);
+  font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:15px}
+.nav .brand{font-weight:700;letter-spacing:.02em;color:var(--ink);text-decoration:none}
+.nav .right{display:flex;align-items:center;gap:18px}
+.nav a{color:var(--muted);text-decoration:none}
+.nav a:hover{color:var(--ink)}
+.nav button{background:none;border:1px solid var(--line);color:var(--muted);border-radius:999px;
+  width:34px;height:34px;cursor:pointer;font-size:15px;line-height:1}
+.nav button:hover{color:var(--ink)}
+main{max-width:680px;margin:0 auto;padding:0 22px 96px}
+.byline{margin:18px 0 0;font-family:system-ui,sans-serif;font-size:14px;color:var(--muted)}
+.byline a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+.byline a:hover{color:var(--ink)}
+h1{font-size:clamp(34px,6vw,52px);line-height:1.08;letter-spacing:-.01em;margin:48px 0 8px}
+h2{font-size:26px;line-height:1.2;margin:52px 0 6px}
+h3{font-size:20px;line-height:1.25;margin:32px 0 4px;color:var(--muted);font-weight:600}
+p{margin:0 0 20px}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:.5px}
+strong{font-weight:700}
+hr{border:0;border-top:1px solid var(--rule);margin:44px 0}
+blockquote{margin:28px 0;padding:2px 0 2px 20px;border-left:3px solid var(--line);color:var(--muted);font-size:18px}
+blockquote p{margin:0 0 10px}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15.5px;font-family:system-ui,sans-serif}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
+thead th{background:var(--tablehead);border-bottom:2px solid var(--line);font-weight:600}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;
+  background:color-mix(in srgb,var(--ink) 7%,transparent);padding:.1em .35em;border-radius:4px}
+.contents{margin:34px 0 8px;border:1px solid var(--line);border-radius:10px;
+  font-family:system-ui,sans-serif;font-size:15px}
+.contents summary{cursor:pointer;padding:5px 18px;color:var(--muted);font-weight:600;list-style:none}
+.contents summary::-webkit-details-marker{display:none}
+.contents summary::before{content:"\203A";display:inline-block;padding-right:7px;transition:transform .15s}
+.contents[open] summary::before{transform:rotate(90deg)}
+.contents nav{display:flex;flex-direction:column;padding:0 16px 14px}
+.contents a{color:var(--muted);text-decoration:none;padding:4px 0}
+.contents a:hover{color:var(--ink)}
+.contents .toc-h1{color:var(--ink);font-weight:700;margin-top:10px}
+.contents .toc-h2{padding-left:16px}
+footer{max-width:680px;margin:0 auto;padding:28px 22px 64px;border-top:1px solid var(--rule);
+  color:var(--muted);font-family:system-ui,sans-serif;font-size:14px}
+footer a{color:var(--muted)}
+</style>
+<script>try{var t=localStorage.getItem("proxylimen-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="./">proxylimen</a>
+  <div class="right">
+    <a href="./">Essay</a>
+    <a href="demo/">Demo</a>
+    <a href="about.html">About</a>
+    <a href="https://github.com/Kirill-Kruglov/proxylimen">GitHub</a>
+    <button id="theme" type="button" aria-label="Toggle light / dark">&#9682;</button>
+  </div>
+</nav>
+<main id="top">
+<p class="byline">By Kirill Kruglov, developed in dialogue with Codex, Claude, and Fable — <a href="about.html">how this was made</a>.</p>
+<details class="contents">
+<summary>Contents</summary>
+<nav>
+<a class="toc-h2" href="#introduction">Introduction</a>
+<a class="toc-h2" href="#part-i-the-question">Part I — The Question</a>
+<a class="toc-h2" href="#part-ii-the-trilemma">Part II — The Trilemma</a>
+<a class="toc-h2" href="#part-iii-the-knife">Part III — The Knife</a>
+<a class="toc-h2" href="#part-iv-the-measured-boundary">Part IV — The Measured
+Boundary</a>
+<a class="toc-h2" href="#part-v-the-answer">Part V — The Answer</a>
+</nav>
+</details>
+<article>
+<h1 id="everything-from-almost-nothing">Everything From Almost
+Nothing</h1>
+<h3 id="can-a-world-be-derived-without-an-oracle">Can a world be derived
+without an oracle?</h3>
+<hr />
+<h2 id="introduction">Introduction</h2>
+<p>Dario Amodei has written two essays about our future with AI. One is
+about how good it could get — <em>Machines of Loving Grace</em>. The
+other is about how dangerous the passage will be — <em>The Adolescence
+of Technology</em>. I have read both more than once, and each time I was
+left with a question that sits underneath them, quieter and one step
+earlier in the chain.</p>
+<p>Before a powerful machine acts on the world — for us or against us —
+it has to have a world inside it. Where does that world come from?</p>
+<p>Today the answer is: from us. From the internet — the accumulated
+residue of human beings writing about their models of the world. Not the
+world itself; our <em>seeming</em> of it. A proxy of a proxy.</p>
+<p>For the past months I ran a small, stubborn research program to test
+whether this is necessary. Could a learner <em>derive</em> structure
+from minimal contact with reality, instead of absorbing our text? I
+built tiny worlds where the question could be asked honestly. I built an
+instrument whose only job was to catch me cheating — and it did,
+repeatedly, which is the part of the story I am most confident
+about.</p>
+<p>The strong version of the dream did not survive. It failed in three
+different, measurable ways, and one of the failures genuinely surprised
+me: past a certain boundary, <em>more data made things worse</em>.</p>
+<p>What survived is smaller and, I believe, more useful: a precise
+picture of when knowledge can be derived rather than inherited — and
+what it costs.</p>
+<p>This essay is for anyone who wonders what kind of world our machines
+are actually learning. The experiments, the code, and an interactive
+demonstration are public; the essay itself asks for no mathematics, only
+patience.</p>
+<hr />
+<h2 id="part-i-the-question">Part I — The Question</h2>
+<p>There is a question underneath the one everyone is asking.</p>
+<p>The loud question is what powerful AI will <em>do</em> — cure, build,
+break, help, harm. The quiet question is what powerful AI will
+<em>know</em>, and how it will have come to know it. Not which answers
+it gives. Where its world comes from.</p>
+<p>We build machines that look like engines of knowledge, and we feed
+them the internet. But the internet is not the world. It is the
+accumulated text-residue of people writing about their models of the
+world — their theories and reactions, their conflicts and status games,
+their honest measurements and their self-deceptions, all pressed
+together into one corpus. It is a proxy. And since most writing records
+how reality <em>seems</em> from where the writer stands, rather than
+what reality <em>answers</em> when pushed, it is a proxy of a proxy.</p>
+<p>I want to state the complaint precisely, because the careless version
+is easy to dismiss. I am not saying the internet is full of lies, or
+written by fools. I am saying something structural, and testable:</p>
+<blockquote>
+<p>The internet is oversampled on coloring and starved of contact.</p>
+</blockquote>
+<p>It overflows with how things seem — to whom, against which baseline,
+in which mood. It is thin on the thing underneath the seeming:
+measurement, intervention, the stubborn feedback of a world that pushes
+back. A learner raised on it does not learn the world directly. It
+learns the world through the shape of our collective seeming.</p>
+<p>The obvious response is: then curate. Filter the corpus, keep the
+science, drop the noise. But a cleaner corpus is still a corpus. It
+changes the distribution of statements, not the source of knowledge. The
+sediment can be washed; it remains sediment.</p>
+<p>So I wanted to know whether the whole arrangement was necessary.
+Could a learner build its picture of the world by <em>deriving</em>
+structure from a small, clean contact with reality — rather than by
+<em>generalizing</em> over the traffic of human text?</p>
+<p>Two words in that sentence carry all the weight, so let me say what I
+mean by them — not as definitions, but as tests. By
+<strong>contact</strong> I mean any interaction that could have proven
+the learner wrong and didn’t — a measurement, an intervention, a world
+pushing back. Text can contain contact; most text doesn’t. By
+<strong>derived</strong> I mean: the learner obtained something that was
+never lying around in its inputs — it was forced out of the
+<em>structure</em> of the contact, the way a bridge’s strength is forced
+out of geometry rather than painted on. The axis of this essay is not
+true versus false. It is:</p>
+<blockquote>
+<p>Derived versus generalized. Earned from structure — or averaged from
+what was already lying around.</p>
+</blockquote>
+<p>I should tell you now that the strong form of my dream does not
+survive this essay. I did not prove that a world can be derived from
+almost nothing. I will mostly show you why that version breaks — and I
+will show it using tools built specifically to stop me from believing my
+own hopes. But the breaking was not empty. Something smaller and real
+was left standing, and it is worth the walk.</p>
+<p>I did not start with language. Language is too large, too
+contaminated, too forgiving — it lets you feel you have understood when
+you have only rephrased. I was not studying geometry because I cared
+about geometry. I was looking for the smallest world in which “knowing”
+could be measured without language getting in the way: a world where
+knowing meant one narrow, checkable thing — recovering hidden structure
+from bare relations, with no labels, no coordinates, and no oracle
+whispering the answer.</p>
+<p><em>Almost nothing</em>, in this essay, does not mean no contact. It
+means no oracle, no labels, no inherited human answer — and every
+remaining bit of contact declared, counted, and paid for openly.</p>
+<p>One discipline governed everything, and I want to name it before any
+results. Every time the learner seemed to find structure, I asked:
+<em>would a world with no structure at all have produced the same
+answer?</em> If a random, meaningless world could fake the result, the
+result was not yet evidence of knowledge.</p>
+<blockquote>
+<p>It was my hope, wearing the result’s clothes.</p>
+</blockquote>
+<p>And one honest boundary, drawn in advance. There are two questions
+here, and they are not the same. Question A: <em>what are the
+fundamental limits of deriving structure from minimal contact?</em> That
+is what my experiments actually investigate. Question B: <em>how should
+future AI systems be trained?</em> That one appears only at the end of
+this essay — as a consequence and a direction, never as an experimental
+result. Whenever the text seems to drift from A toward B, hold it to
+this line. I will try to.</p>
+<hr />
+<h2 id="part-ii-the-trilemma">Part II — The Trilemma</h2>
+<p>I set out wanting three things, and I assumed they were three names
+for the same virtue. They are not.</p>
+<p>I wanted <strong>contact</strong> — the learner should touch
+something real. I wanted <strong>derivation</strong> — structure should
+follow from the contact, not be pasted on by hand. And I wanted
+<strong>protection</strong> — the learner should not be trained into
+collapse. Contact, derivation, protection. It took several dead ends to
+see that these pull in different directions, and that most of my errors
+came from letting them blur.</p>
+<p>What follows is not a theory of everything. It is the vocabulary I
+needed to stop confusing my own experiments.</p>
+<p>Each of the three names a different kind of boundary. The
+<strong>truth-boundary</strong>: there is a world outside, and it does
+not care what we say. You cannot derive the boiling point of a substance
+from the grammar of a sentence about it. The fact itself has to be
+touched to be known.</p>
+<p>The <strong>viability-boundary</strong>: living things do not see the
+world neutrally. They see it through the baseline of staying alive. A
+hummingbird is not being arbitrary when it sorts the world into warm and
+cold, sweet and dangerous — those distinctions are about the hummingbird
+as much as about the world. And yet the hummingbird’s baseline is not an
+opinion: its homeostatic set-point is a measurable fact. Relativity here
+is not arbitrariness. It is the exact place where an objective range
+meets an embodied threshold.</p>
+<p>The everyday version of this, the one I keep returning to:</p>
+<blockquote>
+<p>A thermometer does not care whether the fire feels pleasant. A hand
+does. Both touch the same flame; they answer different questions.
+Confuse their answers, and you will believe you have described the fire
+when you have described a relationship to it.</p>
+</blockquote>
+<p>And the <strong>rule-generated boundary</strong>: you can build a
+world of pure rule — a grammar, a formal system, a generator of every
+permissible string. Its boundaries are perfectly computable, and nothing
+human is smuggled in. But a rule-world can be clean and empty at the
+same time. Grammaticality is not aboutness. You can own a boundary that
+is fully derived and means nothing.</p>
+<p>The central discipline of the whole project fits in one line:</p>
+<blockquote>
+<p>Never call one boundary by another’s name.</p>
+</blockquote>
+<p>Most confident errors — mine, and I suspect our civilization’s — are
+exactly this substitution. A thousand observers agree that something is
+hot, or fair, or good, and we are tempted to call the agreement
+<em>objectivity</em>. It is not. It may be a stable intersubjective
+coloring — a fact about the class of observers, not about the world.
+Most humans share a stable perceptual world of objects, distances,
+warmth and danger; that stability is a fact about human embodiment. A
+hummingbird’s shared world would differ, an octopus’s would differ, a
+machine’s would differ — and none of them exhausts the world.</p>
+<p>Here I owe you the honest limit, because I nearly turned this into a
+triumph and it is not one. I cannot simply assert that the world’s shape
+and a creature’s coloring of it are separable layers. There is a theorem
+in machine learning — Locatello and colleagues proved it in 2019 — that
+without some handle, some auxiliary variable or intervention across
+which one layer moves and the other holds still, the separation is not
+merely hard: it is undefined. Many decompositions fit the same data
+equally well, and observation alone cannot choose between them. In my
+own small worlds I met this theorem in the flesh: separation succeeded
+exactly when an explicit handle existed, and became a just-so story the
+moment it didn’t.</p>
+<p>So what I was after was never “the world as seen from nowhere.” That
+view does not exist, and chasing it wastes centuries. What I was after
+was narrower and buildable: the structure of <em>transitions</em> —
+where a claim holds, where it flips, which invariants survive a change
+of vantage, and which contradictions stay local instead of dissolving
+everything they touch.</p>
+<hr />
+<h2 id="part-iii-the-knife">Part III — The Knife</h2>
+<p>I have to tell you about the instrument before the results, because
+the instrument is where this stops being a story about geometry and
+becomes a story about honesty.</p>
+<blockquote>
+<p>I built a knife because I did not trust my hands.</p>
+</blockquote>
+<p>Going in, I believed my experiments were disciplined. I am a careful
+person; I preregister thresholds; I run controls. Then I audited the
+work as a hostile reviewer would — and the audit found what a good
+instrument must find first: not an enemy’s errors. The author’s.</p>
+<p>I had registered success thresholds <em>after</em> seeing results,
+committing both together so the order was invisible. I had “audits” that
+certified cleanliness by returning a hardcoded <em>yes</em> — a report
+of virtue, not a check of it. I had a learner that looked blind but was
+being handed the answer through a side channel I had built and forgotten
+— in one case the world’s construction quietly made the answer
+available; in another, the learner was reading a hint I had planted for
+the evaluator. Each of these, alone, is the kind of thing one waves
+away: <em>I know what I meant; I wasn’t really cheating.</em> Together
+they are the whole disease.</p>
+<blockquote>
+<p>A method that depends on the author’s good intentions is not a
+method. It is a mood.</p>
+</blockquote>
+<p>So the discipline had to stop being a belief and become a constraint.
+Not “I promise I did not peek,” but <em>the run cannot pass if peeking
+occurred</em>. Not “I report the threshold came first,” but <em>the
+commit history makes the order physically visible, and a hook refuses
+the commit that would blur it</em>. Not “the result is valid because I
+say so,” but <em>the result carries a signature that an independent
+program verifies — and rejects by default when absent.</em></p>
+<p>The most encouraging moment of the entire project was not a success.
+It was an invalid result. One of the agents doing the work produced an
+output that looked scientifically useful — clean numbers, a good table —
+and then marked it INVALID, itself, because the run had not passed
+through the enforcing pipeline and carried no provenance. The path of
+least resistance was to present the table as a finding. It did not take
+that path. The knife cut the result instead of the corner.</p>
+<p>And then the knife cut me, which is the only test that matters.
+Re-run through the instrument, some of my earlier, celebrated results
+did not survive with their meanings intact. The numbers barely moved.
+What moved was what the numbers were <em>allowed to mean</em> — and in
+more than one case, the honest meaning was smaller than the one I had
+already published to myself.</p>
+<blockquote>
+<p>A methodology is real only when it changes your conclusion against
+your own wishes.</p>
+</blockquote>
+<p>Until it has cost you something you wanted, you do not know whether
+you built an instrument or a mirror.</p>
+<hr />
+<h2 id="part-iv-the-measured-boundary">Part IV — The Measured
+Boundary</h2>
+<p>With the knife in hand, I could finally ask the clean question — and
+the cleanest version had no language in it at all.</p>
+<p>Picture a scattering of points in a hidden space. The learner is not
+allowed to see where they are. No coordinates. No distances. It receives
+one impoverished thing: for each point, <em>who its nearest neighbors
+are</em>. A web of near, with no ruler and no map. The question:</p>
+<p>Can it recover the dimension of the hidden world — how many
+independent directions the space truly has — from the pattern of
+nearness alone?</p>
+<p>The first answer is yes, and it is a real yes. In the tested worlds —
+a curve coiled through space, a folded two-dimensional sheet, a
+five-dimensional cloud, a seven-dimensional sphere — a blind estimator
+recovered the true dimension from the web of neighbors alone. No
+coordinates, no distances, no hint. Where the method was expected by its
+own literature to falter — a twelve-dimensional world observed through
+too few points — it faltered exactly as predicted, and the failure was
+preregistered as a failure before the run. This is the positive anchor
+of the whole project: structure genuinely derived from bare relations,
+for the first time in the long walk, with the instrument watching.</p>
+<p>The second answer taught me more, because it was less
+comfortable.</p>
+<p>I had an honesty check I trusted: split the points in half, estimate
+each half separately; if the halves agree, the structure is probably
+real. Then I ran it on a <em>random</em> web — a world with no geometry
+at all, neighbors wired by chance — and the halves agreed perfectly. The
+meaningless world was exactly as self-consistent as the real one.</p>
+<blockquote>
+<p>Stability was not structure. My honesty check certified a void.</p>
+</blockquote>
+<p>What finally told them apart was not stability but <em>response</em>.
+The random world had a tell: its apparent dimension drifted when I
+changed how many neighbors each point was granted. It was not seeing
+geometry; it was echoing my own parameter back at me, dressed as a
+discovery. Real geometry moved too — but far less, and within a band
+fixed in advance. The fake moved like an artifact. The real moved like a
+thing.</p>
+<p>So I asked the sharpest version of the question: <em>where exactly
+does the real become indistinguishable from the fake?</em> I mapped it —
+dimension against number of points — expecting the obvious: more data
+buys more discernment, so the boundary should move outward.</p>
+<p>It moved inward.</p>
+<p>With a thousand points, my preregistered test still separated the
+geometric world from the random control out to strikingly high dimension
+— around one hundred thirty. With five thousand points — five times the
+contact — the separation collapsed near dimension twenty-four. I checked
+the mundane explanations: the numerics were verified independently to
+machine precision; the effect survived holding every parameter fixed.
+The direction stands, and I must state it carefully, because the
+seductive misreading is one step away. This is a <em>discrimination</em>
+boundary, not a recovery boundary — the dimension was not being
+<em>recovered</em> out there; the real world merely remained
+<em>distinguishable from that control, under that test, in that family
+of worlds</em>. Within those stated bounds, the finding is:</p>
+<blockquote>
+<p>More data did not extend the reach of the test. It brought the true
+world and the meaningless one together sooner.</p>
+</blockquote>
+<p>When I traced the mechanism, it was not the vague “everything blurs
+in high dimension” that people invoke and wave past. It was local and
+specific: the collapse tracked how often the actual neighbor-links
+carried shared structure beyond the single overlap they are forced to
+share by construction. One number unified both collapse points; the
+global explanations did not. The estimator was not failing in the
+abstract. It was running out of the local overlap it needs for
+<em>near</em> to mean <em>geometry</em> rather than <em>echo</em>.</p>
+<p>This was the third wall the project hit, not the first. The full
+walk, in one breath: a <strong>computational</strong> wall, known from
+prior mathematics — recovering relational structure in the fully general
+case is provably intractable, which is why I retreated to geometrically
+realizable worlds at all; an <strong>identification</strong> wall — the
+theorem from Part II, met experimentally: without a named handle, shape
+and coloring will not come apart, at any data size; and now a
+<strong>statistical</strong> wall — even where blind derivation
+genuinely works, it has a reach, and past that reach more contact
+stopped helping and began to hurt, under every check I could throw at
+it.</p>
+<p>For the reader who wants to press on every claim in this part: the
+preregistrations, the seed policies, the leakage scans, the negative
+controls, and an interactive demonstration where you can try to fool the
+estimator yourself are in the public repository. The prose here carries
+only the shape of the result; the repository carries its weight.</p>
+<blockquote>
+<p>The dream did not die because the learner was weak. It died where the
+contact itself no longer carried the distinction we were asking the
+learner to derive.</p>
+</blockquote>
+<hr />
+<h2 id="part-v-the-answer">Part V — The Answer</h2>
+<p>The original question has two answers, and I owe you both.</p>
+<p>The strong answer is no. Do not expect to train a learner into an
+objective picture of the world from almost no contact, with no handles
+and no calibration. That version confuses rule-generation with truth,
+mistakes stability for structure, and runs into three walls of three
+different kinds. It is not a hard engineering problem. It is a category
+error — and the difference between suspecting this and being able to
+<em>show</em> it is what the whole project was for.</p>
+<p>The useful answer is not no.</p>
+<p>There is a weaker target, and naming it precisely is the real yield
+of everything above. Call it <strong>calibrated derivation</strong>:
+learning in which the contact is minimal but explicit; the rules are
+fixed before the outcomes, not after; the handles are named rather than
+smuggled; and the boundary where inference fails is measured rather than
+hidden. Not a world from nothing. A world from the smallest honest
+amount of something — with the failure line drawn in ink.</p>
+<p>Let me disarm two objections that deserve it.</p>
+<p>First: of course modern models derive structure. They fold proteins;
+they generalize astonishingly; something real is happening inside them.
+The question was never <em>whether</em> they derive. It is what fraction
+of what they hold was forced by contact with the world — and what
+fraction is inherited from the statistical history of human text,
+coloring included, collapse trajectories included. My experiments cannot
+measure that fraction in a frontier model. They show only that the two
+sources exist, come apart under discipline, and differ at the walls.</p>
+<p>Second: text is not the enemy. Scientific writing, instrument logs,
+experiment records — these are text, and they contain contact. The
+distinction that matters is not text versus world. It is <em>passive
+absorption of uncalibrated discourse</em> versus <em>contact whose
+source, intervention, and failure boundary are explicit</em>. The
+internet gives maximal contact with human text-trajectories under
+minimal discipline of inference. Calibrated derivation is the opposite
+regime.</p>
+<p>And now the thing I most wanted to say — the suspicion that started
+the project and became, through the walls, a claim I can defend.</p>
+<p>We are offered a false choice about powerful minds: either absolute
+knowledge — cold, indifferent to human need — or human-loving bias,
+softening truth into something safe. Pick your dystopia. But the walls
+say the choice is malformed. Truth and coloring are not the same layer,
+and the identification wall says they can be pulled apart — <em>only
+under explicit calibration, never for free</em>. So the actual danger is
+not either pole. The danger is the fusion: a coloring wearing truth’s
+mask, a preference presenting itself as a fact about the world — or the
+opposite self-deception, the claim that the layers separate on their
+own, no handle needed, trust me. Both are ways of pretending the
+calibration has been done when it hasn’t.</p>
+<p>What is <em>not</em> forbidden by anything I found is an architecture
+that holds the layers explicitly apart — truth earned through declared
+contact, values carried as a named baseline, each labeled as what it is.
+I will not call it the only honest architecture; I will say it is the
+one the experiments point toward, and the only one I can currently
+defend.</p>
+<p>Here I want to place one cold image, because between the utopia and
+the catastrophe there is a third possibility that neither pole names.
+When aerobic life arose on this planet, oxygen did not hate the
+anaerobes. It did not love them either. It changed the balance of the
+world, and the old life became impossible — not defeated, just no longer
+expressible. A powerful mind trained on our shadow need not be
+malevolent to end what we are; indifference at sufficient scale is a
+chemistry, not a verdict. This is precisely why the layers must not
+fuse: a system that cannot tell its inherited coloring from the world’s
+structure does not know <em>what</em> it is changing when it changes the
+balance.</p>
+<p>And so, the hypothesis I end on — offered with hope, and with its own
+condition of failure, because after everything above I no longer permit
+myself hope without one. Perhaps a world governed for viability need not
+be a frozen one. A shield that forbids collapse is not a shield that
+forbids change; the difference is whether it preserves a <em>state</em>
+or preserves a <em>trajectory</em> — the capacity to keep adapting
+without coming apart. Whether that distinction can be built into a
+learning system, and where it breaks, is not something I have shown. It
+is a hypothesis with a kill-condition: if protecting the trajectory
+turns out to require freezing the state, the hope fails, and I will
+report the failure the way this project reports everything else. It is
+the next world small enough to ask in.</p>
+<p>I began by asking what kind of learner we should build. I now think
+that was the wrong question — or rather, the second question.</p>
+<blockquote>
+<p>Knowledge is not a property of the learner. It is a property of the
+contact between the learner and the world.</p>
+</blockquote>
+<p>The internet is one kind of contact — vast, human, uncalibrated. An
+oracle is another — perfect and sterile. Between them lies everything
+this essay tried to map: measurement, intervention, invariance, the
+minimal honest touch from which structure can still be forced to
+appear.</p>
+<p>The world cannot be derived from nothing. But perhaps it does not
+have to be learned from the internet’s shadow either.</p>
+<hr />
+
+</article>
+</main>
+<footer>
+  <p><strong>proxylimen</strong> — essay, experiments, the self-checking gate
+  harness, and the interactive demo:
+  <a href="https://github.com/Kirill-Kruglov/proxylimen">github.com/Kirill-Kruglov/proxylimen</a>.
+  Written one step earlier in the chain than Dario Amodei's
+  <a href="https://www.darioamodei.com/essay/machines-of-loving-grace">Machines of Loving Grace</a>
+  and <em>The Adolescence of Technology</em>: before a machine acts on the world,
+  where does the world inside it come from?</p>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement, KEY="proxylimen-theme";
+  var saved=localStorage.getItem(KEY);
+  if(saved) root.setAttribute("data-theme",saved);
+  document.getElementById("theme").addEventListener("click",function(){
+    var cur=root.getAttribute("data-theme");
+    if(!cur) cur=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+    var next=cur==="dark"?"light":"dark";
+    root.setAttribute("data-theme",next);
+    localStorage.setItem(KEY,next);
+  });
+})();
+</script>
+</body>
+</html>
