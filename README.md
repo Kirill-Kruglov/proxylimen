@@ -81,8 +81,8 @@ subordinate to that file.
   crossover is `d*=130` at `n=1000` and `d*=24` at `n=5000`.
 
 - **Random-control mimicry** is analytically explained for the preregistered
-  directed random k-out graph: the mechanism gives `L_CAP ~= 1/(k+1)`, matching
-  the recorded k-sweep values `9.40`, `11.50`, and `13.10` for `k=10,15,20`.
+  directed random k-out graph: the mechanism gives `L_CAP ~= 1/(k+1)`, which
+  drives the recorded E_CAP k-sweep `9.40`, `11.50`, `13.10` for `k=10,15,20`.
 
 ## What is enforced vs asserted
 
