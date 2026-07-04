@@ -14,8 +14,9 @@
 
 The internet is a proxy of a proxy: text left behind by other people's models of
 the world, not the world itself. `proxylimen` asks where a learner can still
-recover structure from explicit, minimal contact, and where that recovery becomes
-indistinguishable from a control that has no geometry at all.
+recover structure from explicit, minimal contact, and where a validated
+diagnostic stops telling that structure apart from a control that has no
+geometry at all.
 
 > The world cannot be derived from nothing, but it may not have to be learned
 > from the shadow of the internet either. There is an intermediate regime of

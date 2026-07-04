@@ -190,6 +190,11 @@ And the limits that matter for the essay's argument:
   Disentangled Representations.* ICML 2019, PMLR vol. 97, pp. 4114–4124.
   [proceedings.mlr.press/v97/locatello19a.html](https://proceedings.mlr.press/v97/locatello19a.html)
   — the identifiability theorem referenced in Part II.
+- M. Yannakakis. *The complexity of the partial order dimension problem.*
+  SIAM Journal on Algebraic and Discrete Methods, 3(3):351–358, 1982.
+  [doi:10.1137/0603036](https://doi.org/10.1137/0603036) — the anchor for the
+  essay's "computational wall": already deciding whether a partial order has
+  dimension at most three is NP-complete.
 
 ## A.10 Where every number lives
 
