@@ -49,6 +49,14 @@ it is enforced and recorded:
   harness flagged it, and the canonical registry forbids citing it as blind
   discovery. The flag existing — and firing on my own earlier result — is what
   makes the B2.2.1 "false" meaningful.
+- One interface wart, surfaced by an external read of this repository: the world
+  generator's `learner_view` also exposes a `seed_id` alongside the adjacency.
+  The estimator path never reads it — enforced in CI by an AST scan of every
+  estimator function with the harness's own leakage scanner
+  ([`scripts/check_learner_view_hygiene.py`](../../scripts/check_learner_view_hygiene.py))
+  — but a stricter interface would not have exposed it at all. The signed run's
+  code is preserved as it ran; the check, not a retroactive edit, carries the
+  claim.
 
 ## A.3 The validated regime
 

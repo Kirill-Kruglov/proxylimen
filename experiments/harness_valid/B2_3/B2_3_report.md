@@ -106,13 +106,18 @@ structured graphs.
 
 ## 7. Verification
 
-`python3 -m gate_harness.verify_decision gate_harness_experiments/B2_3/decision.json`
-returned code `0`.
+`python3 -m gate_harness.verify_decision experiments/harness_valid/B2_3/decision.json`
+returned code `0` (VALID).
 
-This B2.3 artifact is not harness-signed because the current harness requires a
-strict two-commit preregistration lock before `run_gate` will write a citable
-decision. The local decision is therefore JSON-valid and reproducible, but not
-valid by the existing `verify_decision` provenance checker.
+The decision at this path is produced through `gate_harness.runner.run_gate`
+behind a two-commit preregistration lock and carries `_harness_provenance`;
+`verify_decision` accepts it, and rejects it if the harness code or the decision
+is altered.
+
+*(Corrected at extraction, 2026-07-06: the original paragraph here, written
+before the harness-signed rerun, stated that this artifact was "not
+harness-signed". That described the pre-signing state and had become false; an
+external review caught the stale text.)*
 
 ## 8. What was NOT shown
 

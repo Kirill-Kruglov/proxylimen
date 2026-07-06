@@ -145,9 +145,11 @@ Run the harness self-checks and reproduce the citability split (Python 3.11+; th
 only runtime dependency is numpy):
 
 ```bash
+python3 -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"        # numpy + pytest
 pytest -q                      # 18 harness self-checks
 python scripts/verify_all.py   # 5 VALID, superseded INVALID; non-zero on mismatch
+python scripts/check_learner_view_hygiene.py   # estimator path never reads seed_id
 ```
 
 CI runs exactly this on every push.

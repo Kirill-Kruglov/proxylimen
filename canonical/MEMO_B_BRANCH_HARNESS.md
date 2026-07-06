@@ -1,5 +1,10 @@
 # MEMO — B-branch falsification audit & gate_harness enforcement
 
+> **Extraction note (proxylimen).** Preserved verbatim from the ascesis forge;
+> paths and commit hashes below refer to the *ascesis* repository. The path map
+> at the top of [`RESULTS_CANONICAL.md`](RESULTS_CANONICAL.md) translates every
+> cited location into this repository's layout.
+
 Factual registry. Every number is copied from a named file (path + git commit
 where applicable). No rounding, no interpretation. Compiled 2026-07-02.
 

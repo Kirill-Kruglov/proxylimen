@@ -22,8 +22,24 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-ORIG_B1 = HERE.parent / "B1_auxiliary_variable_identifiability_gate"
 REPO_ROOT = HERE.parents[2]
+
+# extraction repair (path resolution only, no logic change): this harnessed rerun
+# replays the ORIGINAL pre-harness B1 toy — by design, not by accident; the rerun
+# exists to re-derive that result under enforcement. In the ascesis forge the
+# original lived beside this directory; in the extracted proxylimen repo it is
+# preserved under experiments/superseded_invalid/ (INVALID as a *decision*, still
+# the audited source of the learner/eval code). Fail closed if neither exists.
+_B1_NAME = "B1_auxiliary_variable_identifiability_gate"
+for _cand in (HERE.parent / _B1_NAME,
+              REPO_ROOT / "experiments" / "superseded_invalid" / _B1_NAME):
+    if _cand.is_dir():
+        ORIG_B1 = _cand
+        break
+else:
+    raise FileNotFoundError(
+        f"{_B1_NAME} not found beside {HERE} or under experiments/superseded_invalid/"
+    )
 sys.path.insert(0, str(ORIG_B1))
 sys.path.insert(0, str(REPO_ROOT))
 

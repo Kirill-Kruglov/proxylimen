@@ -22,9 +22,31 @@ import numpy as np
 
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[1]
-B2_2 = ROOT / "gate_harness_experiments" / "B2_2"
-B2_2_1 = ROOT / "gate_harness_experiments" / "B2_2_1"
+
+
+# extraction repair (path resolution only, no logic change): this experiment was
+# authored in the ascesis forge, where sibling gates lived under
+# gate_harness_experiments/ and HERE.parents[1] was the repo root. In the
+# extracted proxylimen repo the gates live under experiments/harness_valid/.
+# Resolve whichever layout is present; fail closed if neither exists.
+def _repo_root(start: Path) -> Path:
+    for p in start.parents:
+        if (p / "gate_harness").is_dir():
+            return p
+    raise FileNotFoundError(f"no repo root containing gate_harness/ above {start}")
+
+
+def _find_gate(root: Path, name: str) -> Path:
+    for cand in (root / "experiments" / "harness_valid" / name,
+                 root / "gate_harness_experiments" / name):
+        if cand.is_dir():
+            return cand
+    raise FileNotFoundError(f"gate directory {name!r} not found under {root}")
+
+
+ROOT = _repo_root(HERE)
+B2_2 = _find_gate(ROOT, "B2_2")
+B2_2_1 = _find_gate(ROOT, "B2_2_1")
 OUTPUTS = HERE / "outputs"
 
 sys.path.insert(0, str(B2_2))
@@ -573,13 +595,15 @@ structured graphs.
 
 ## 7. Verification
 
-`python3 -m gate_harness.verify_decision gate_harness_experiments/B2_3/decision.json`
+`python3 -m gate_harness.verify_decision experiments/harness_valid/B2_3/decision.json`
 returned code `{verify['returncode']}`.
 
-This B2.3 artifact is not harness-signed because the current harness requires a
-strict two-commit preregistration lock before `run_gate` will write a citable
-decision. The local decision is therefore JSON-valid and reproducible, but not
-valid by the existing `verify_decision` provenance checker.
+The decision at this path is produced through `gate_harness.runner.run_gate`
+behind a two-commit preregistration lock and carries `_harness_provenance`;
+`verify_decision` accepts it (exit code 0) and rejects it if the harness code
+or the decision is altered. (Template corrected at extraction: an earlier
+version of this section, written before the harness-signed rerun, described the
+pre-signing state.)
 
 ## 8. What was NOT shown
 

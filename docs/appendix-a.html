@@ -135,6 +135,15 @@ href="https://github.com/Kirill-Kruglov/proxylimen/blob/main/experiments/harness
 registry forbids citing it as blind discovery. The flag existing — and
 firing on my own earlier result — is what makes the B2.2.1 “false”
 meaningful.</li>
+<li>One interface wart, surfaced by an external read of this repository:
+the world generator’s <code>learner_view</code> also exposes a
+<code>seed_id</code> alongside the adjacency. The estimator path never
+reads it — enforced in CI by an AST scan of every estimator function
+with the harness’s own leakage scanner (<a
+href="https://github.com/Kirill-Kruglov/proxylimen/blob/main/scripts/check_learner_view_hygiene.py"><code>scripts/check_learner_view_hygiene.py</code></a>)
+— but a stricter interface would not have exposed it at all. The signed
+run’s code is preserved as it ran; the check, not a retroactive edit,
+carries the claim.</li>
 </ul>
 <h2 id="a.3-the-validated-regime">A.3 The validated regime</h2>
 <p>B2.2.1 reproduces the paper’s dimension-table behavior from the graph

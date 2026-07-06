@@ -17,13 +17,19 @@ from typing import Any
 import numpy as np
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[1]
 OUTPUTS = HERE / "outputs"
-sys.path.insert(0, str(ROOT / "gate_harness_experiments" / "B2_2"))
 sys.path.insert(0, str(HERE))
 
-import estimators as EST  # noqa: E402
+# extraction repair (path resolution only, no logic change): resolve the repo
+# root and the B2_2 gate in either the ascesis layout (gate_harness_experiments/)
+# or the extracted proxylimen layout (experiments/harness_valid/). run_b2_3
+# provides the shared resolvers.
 import run_b2_3 as B23  # noqa: E402
+
+ROOT = B23.ROOT
+sys.path.insert(0, str(B23.B2_2))
+
+import estimators as EST  # noqa: E402
 
 FIXED_K = 15
 FIXED_K_EPSILON = 0.5

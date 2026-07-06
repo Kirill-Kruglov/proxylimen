@@ -1,5 +1,24 @@
 # RESULTS_CANONICAL.md — Ascesis Canonical Results Registry
 
+> **Extraction note & path map (proxylimen).** This registry is preserved
+> verbatim from the ascesis research forge, where it was compiled: the file
+> paths and commit hashes below (e.g. `@ 8ccefba`) refer to the *ascesis*
+> repository and do not resolve in this extracted repo. The body is kept
+> unchanged because it is the historical ceiling on claim strength. To locate
+> any cited artifact here, use this map:
+>
+> | path in this registry (ascesis) | path in this repository |
+> |---|---|
+> | `experiments/B/B1_harness_rerun/` | `experiments/harness_valid/B1_harness_rerun/` |
+> | `experiments/B/B2_harness_rerun/` | `experiments/harness_valid/B2_harness_rerun/` |
+> | `gate_harness_experiments/B2_2/` | `experiments/harness_valid/B2_2/` |
+> | `gate_harness_experiments/B2_2_1/` | `experiments/harness_valid/B2_2_1/` |
+> | `gate_harness_experiments/B2_3/` | `experiments/harness_valid/B2_3/` |
+> | `experiments/B/B0_…`, `B1_…`, `B1_1_…`, `B2_relational_…` | `experiments/superseded_invalid/…` |
+> | `gate_harness/` | `gate_harness/` (unchanged) |
+>
+> See [`MANIFEST.md`](../MANIFEST.md) for the full extraction record.
+
 This file is the canonical registry for essay claims. Any essay statement must be no stronger than the claim recorded here. Every numeric value below is copied from a named repository file with that file's last commit hash. If a requested number is not present in a committed artifact, this file says so instead of reconstructing it.
 
 Verification baseline at time of writing: `python3 -m gate_harness.verify_decision experiments/B/B1_harness_rerun/decision.json experiments/B/B2_harness_rerun/decision.json gate_harness_experiments/B2_2_1/decision.json gate_harness_experiments/B2_3/decision.json` returns `VALID` for all four. Legacy pre-harness B1/B2.1 decisions return `INVALID` because they lack `_harness_provenance`.

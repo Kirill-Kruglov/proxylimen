@@ -126,7 +126,7 @@ The first answer is yes — a bounded, checkable yes. In the tested worlds — a
 
 The second answer taught me more, because it was less comfortable.
 
-I had an honesty check I trusted: split the points in half, estimate each half separately; if the halves agree, the structure is probably real. Then I ran it on a *random* web — a world with no geometry at all, neighbors wired by chance — and the halves agreed perfectly. The meaningless world was exactly as self-consistent as the real one.
+I had an honesty check I trusted: split the points in half, estimate each half separately; if the halves agree, the structure is probably real. Then I ran it on a *random* web — a world with no geometry at all, neighbors wired by chance (the preregistered random k-out control) — and the halves agreed perfectly. The meaningless world was exactly as self-consistent as the real one.
 
 > Stability was not structure. My honesty check certified a void.
 

@@ -17,3 +17,5 @@ jobs:
       - run: pytest -q
       - name: Verify the citability split (5 VALID, superseded INVALID)
         run: python scripts/verify_all.py
+      - name: Estimator fit path never reads seed_id (AST scan)
+        run: python scripts/check_learner_view_hygiene.py
