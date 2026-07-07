@@ -186,5 +186,11 @@ The world cannot be derived from nothing. But perhaps it does not have to be lea
 
 ---
 
+## Appendix — The Measured Boundary
+
+For the reader who wants the weight and not only the shape: [Appendix A](appendices/A-the-measured-boundary.md) carries the technical detail behind Part IV — the estimator's exact definition, what *blind* means operationally, the validated regime cell by cell, the random control and the mechanism by which it fakes geometry, the crossover tables with confidence intervals, the load-bearing fixed-neighbor caveat, what the result licenses and what it does not — and the committed file behind every number. Nothing in it is required to follow the essay; everything in it is required to *check* the essay.
+
+---
+
 *This essay is one panel of a triptych. [**justitia**](https://kirill-kruglov.github.io/justitia/) asks what keeps a world of powerful, evolving agents livable when no one can read anyone's soul — trust in identities replaced by consequences and structure. This essay asks where a mind's world comes from — trust in inherited text replaced by calibrated contact. And [**fallacy-cutter**](https://kirill-kruglov.github.io/fallacy-cutter/) is the knife both were cut with — trust in the researcher, me included, replaced by an instrument that fails closed. One thesis underneath all three: do not try to certify intentions; build contact, consequences, and constraints that can be checked.*
 
